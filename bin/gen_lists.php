@@ -95,8 +95,11 @@ foreach ($config['BRANCHES'] as $code => $name) {
 
             $entries = file($data_file);
 
+            $template = $twig->load('_gen_lists_header.html.twig');
+            $body = $template->render();
+
             $template = $twig->load('_list_start.html.twig');
-            $body = $template->render(['type' => $type, 'name' => $name, 'today' => $today]);
+            $body .= $template->render(['type' => $type, 'name' => $name, 'today' => $today]);
 
             foreach ($entries as $line) {
                 $entry = json_decode($line, true);
@@ -109,6 +112,9 @@ foreach ($config['BRANCHES'] as $code => $name) {
             }
 
             $template = $twig->load('_list_end.html.twig');
+            $body .= $template->render();
+
+            $template = $twig->load('_gen_lists_footer.html.twig');
             $body .= $template->render();
 
             $f_mail = fopen("$install_path/bin/email_temp.html", "w") or die("Could not open email temporary file");
