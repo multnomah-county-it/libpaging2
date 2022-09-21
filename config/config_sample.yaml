@@ -1,0 +1,47 @@
+base_path: /var/www/html-dev
+base_URL: http://paging.multcolib.org:8080
+BRANCHES:
+    ALB: Albina
+    BMT: Belmont
+    CAP: Capitol Hill
+    CEN: Central
+    FRV: Fairview-Columbia
+    GRG: Gregory Heights
+    GSM: Gresham
+    HDL: Hillsdale
+    HGT: Holgate
+    HWD: Hollywood
+    KEN: Kenton
+    LOS: Library Outreach
+    MID: Midland
+    NPO: North Portland
+    NRW: Northwest
+    ROC: Rockwood
+    SEL: Sellwood-Moreland
+    STJ: St Johns
+    TRT: Troutdale
+    WOD: Woodstock
+    ISM: Technical Services
+BRANCH_EMAILS:
+    ALB: person@library.org
+    BMT: person@library.org
+    CAP: person@library.org
+    CEN: person@library.org
+    FRV: person@library.org
+    GRG: person@library.org
+    GSM: person@library.org
+    HDL: person@library.org
+    HGT: person@library.org
+    HWD: person@library.org
+    KEN: person@library.org
+    LOS: person@library.org
+    MID: person@library.org
+    NPO: person@library.org
+    NRW: person@library.org
+    ROC: person@library.org
+    SEL: person@library.org
+    STJ: person@library.org
+    TRT: person@library.org
+    WOD: person@library.org
+    ISM: person@library.org
+EMAIL_FROM: system@library.org
