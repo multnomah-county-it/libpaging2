@@ -1,12 +1,11 @@
 <?php
 
-// Set the search values based on defaults and inputs
-$field_list = 'barcode,copyNumber,currentLocation';
-if ( ! empty($_GET['field_list']) ) {
-    $field_list = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
-}
+// Remove non-printing characters from the incoming field list, particularly returns
+$_GET['field_list'] = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
 
-isset($_GET['item_key']) ? $item_key = $_GET['item_key'] : $item_key = '';
+// Set the search values based on defaults and inputs
+$field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'barcode,copyNumber,currentLocation';
+$item_key = ! empty($_GET['item_key']) ? $_GET['item_key'] : $item_key = '';
 
 // Connect to ILSWS and get valid search indexes
 $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');

@@ -1,32 +1,24 @@
 <?php
 
+// Remove non-printing characters, particularly returns
+$_GET['field_list'] = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
+
 // Set the search values based on defaults and inputs
-$field_list = 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode}}';
-if ( ! empty($_GET['field_list']) ) {
-    $field_list = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
-}
-$index = 'SUBJECT';
-if ( ! empty($_GET['index']) ) {
-    $index = $_GET['index'];
-}
-$terms = '';
-if ( ! empty($_GET['terms']) ) {
-    $terms = $_GET['terms'];
-}
-$ct = '50';
-if ( ! empty($_GET['ct']) ) {
-    $ct = $_GET['ct'];
-}
+$field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode}}';
+$index = ! empty($_GET['index']) ? $_GET['index'] : 'SUBJECT';
+$terms = ! empty($_GET['terms']) ? $_GET['terms'] : '';
+$ct = ! empty($_GET['ct']) ? $_GET['ct'] : '50';
+$j = ! empty($_GET['j']) ? $_GET['j'] : 'AND';
+
+// Check the appropriate radio buttons
 $j_AND = ' checked';
 $j_OR = '';
-if ( ! empty($_GET['j']) ) {
-    if ( $_GET['j'] == 'AND' ) {
-        $j_AND = ' checked';
-        $j_OR = '';
-    } else {
-        $j_AND = '';
-        $j_OR = ' checked';
-    }
+if ( $j == 'AND' ) {
+    $j_AND = ' checked';
+    $j_OR = '';
+} else {
+    $j_AND = '';
+    $j_OR = ' checked';
 }
 
 // Connect to ILSWS and get valid search indexes
@@ -56,18 +48,20 @@ echo $template->render([
     'field_list' => $field_list
     ]);
 
-if ( ! empty($_GET['index']) && ! empty($_GET['terms']) && ! empty($_GET['field_list']) ) {
+if ( $index && $terms && $field_list ) {
 
     try {
-        $response = $ilsws->search_bib($token, $_GET['index'], $_GET['terms'], ['j' => $_GET['j'], 'ct' => $_GET['ct'], 'includeFields' => $_GET['field_list']]);
+        $response = $ilsws->search_bib($token, $index, $terms, ['j' => $j, 'ct' => $ct, 'includeFields' => $field_list]);
     } catch (Exception $e) {
         $template = $twig->load('_error.html.twig');
         echo $template->render(['message' => $e->getMessage()]);
     } 
 
+    $template = $twig->load('_search_result.html.twig');
     if ( empty($ilsws->error) ) {
-        $template = $twig->load('_search_result.html.twig');
-        $template->render(['message' => count($response) . " records returned"]);
+        echo $template->render(['message' => count($response) . " records returned"]);
+    } else {
+        echo $template->render(['message' => $ilsws->error]);
     }
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {

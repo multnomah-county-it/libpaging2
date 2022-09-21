@@ -1,14 +1,11 @@
 <?php
 
+// Remove non-printing characters from the incoming field list, particularly returns
+$_GET['field_list'] = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
+
 // Set the search values based on defaults and inputs
-$field_list = 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode}}';
-if ( ! empty($_GET['field_list']) ) {
-    $field_list = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
-}
-$bib_key = '';
-if ( ! empty($_GET['bib_key']) ) {
-    $bib_key = $_GET['bib_key'];
-}
+$field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode}}';
+$bib_key = ! empty($_GET['bib_key']) ? $_GET['bib_key'] : '';
 
 // Connect to ILSWS and get valid search indexes
 $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
@@ -24,6 +21,7 @@ echo $template->render([
 if ( ! empty($bib_key) && ! empty($field_list) ) {
 
     if ( $field_list == 'marc' ) {
+
         try {
             $record = $ilsws->get_bib_marc($token, $bib_key);
         } catch (Exception $e) {
@@ -31,7 +29,9 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
             echo $template->render(['message' => $e->getMessage()]);
         } 
         $template = '_get_bib_marc.html.twig';
+
     } else {
+
         try {
             $record = $ilsws->get_bib($token, $bib_key, $field_list);
         } catch (Exception $e) {
