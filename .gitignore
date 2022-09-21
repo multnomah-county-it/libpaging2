@@ -1,0 +1,5 @@
+/vendor/
+/config/*
+/public/templates/cache/*
+composer.phar
+/bin/email_temp.html
