@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: Helvetica,Arial,'sans serif';
+	padding: .25em;
+	font-size: 100%;
+    background-color: #FFFFFF;
+}
+
+p {
+    text-align: left;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.list-wide {
+    width: 90%;
+}
+
+.list-narrow {
+    width: 20%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.small {
+    font-size: 70%;
+}
+
+footer {
+    font-size: 70%;
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	color: black;
+	background-color: white;
+	margin-bottom: 1em;
+}
+
+p.list {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    border: 1px solid #f1f1f1;
+    line-height: 1.6;
+}
+
+table {
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+}
+
+th {
+	padding: .25em;
+    font-size: 80%;
+	text-align: left;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+td {
+	padding: .25em;
+    font-size: 80%;
+	text-align: left;
+    vertical-align: bottom;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#record .c1 {
+    width: 14em;
+}
+
+#record .c2 {
+    width: 56em;
+}
+
+#record table {
+    border: 1px solid #f2f2f2;
+	border-radius: 5px;
+}
+
+#record th {
+    background-color: #f2f2f2;
+    font-size: 80%;
+	padding: .25em;
+    text-align: right;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+#record td {
+    background-color: #ffffff;
+    font-size: 80%;
+	padding: .25em;
+	text-align: left;
+    vertical-align: bottom;
+}
+
+textarea.fieldlist {
+    overflow: scroll;
+    resize: none;
+}
+
+img.logo {
+    max-width: 200px;
+}
+
+a:link {
+	color: #047695;
+    font-style: none;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 8px 8px; 
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+    background-color: #047695;
+    color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}

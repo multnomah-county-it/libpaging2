@@ -1,0 +1,18 @@
+<div class="center-block">
+    <form action="/index.php">
+        <p class="list list-wide">
+            <input type="hidden" name="page" value="search">
+            <label for="index">Index:</label><br>
+            {{ index_select | raw }}<br>
+            <label for="terms">Terms:</label><br>
+            <input type="text" id="terms" name="terms" value="{{ terms }}" size="40" maxlength="60" required><br>
+            <label for="field_list">Field List:</label><br>
+            <textarea class="field_list" id="field_list" name="field_list" wrap="off" rows="2" cols="70" maxlength="256" required>{{ field_list }}</textarea><br><br>
+            <input type="radio" id="j" name="j" value="AND"{{ j_AND }}><label for="j">AND</label>
+            <input type="radio" id="j" name="j" value="OR"{{ j_OR }}><label for="j">OR</label>
+            <label for="ct">&nbsp;&nbsp;&nbsp;&nbsp;Max Rows to Return: </label><input type="text" id="ct" name="ct" value="{{ ct }}" size="4" maxlength="4" required><br><br>
+            <input type="submit" value="Search">
+        </p>
+    </form>
+</div>
+<hr>

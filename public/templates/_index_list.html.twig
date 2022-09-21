@@ -1,0 +1,14 @@
+<h1 class="center-text">Multnomah County Library Paging Lists for {{ today }}</h1>
+<p class="list list-narrow">
+{% for code, name in branches %}
+    <a href="/index.php?page=library&code={{ code }}" alt="{{ name }} Paging Lists">{{ name }}</a><br>
+{% endfor %}
+</p>
+<div class="center-text">
+<form id="update_paging" method="get" action="/index.php">
+<input name="page" type="hidden" value="index_list">
+<input name="update" type="hidden" value="1">
+<input value="Update Paging Lists" type="submit">
+</form>
+</div>
+<p class="center-text small">{{ update }}</p>

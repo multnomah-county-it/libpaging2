@@ -1,0 +1,42 @@
+<div id="record" class="center-block">
+    <table class="center-block">
+        {% for key, field in record %}
+            {% if key == 'key' %}
+                <tr>
+                    <th class="c1">{{ key }}</th>
+                    <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=get_bib&bib_key={{ field }}" alt="Display bib record">{{ field }}</a></td>
+                </tr>
+            {% elseif key == 'author' %}
+                <tr>
+                    <th class="c1">{{ key }}</th>
+                    <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&terms={{ author_search }}" alt="Search for author">{{ field }}</a></td>
+                </tr>
+            {% elseif key == 'title' %}
+                <tr>
+                    <th class="c1">{{ key }}</th>
+                    <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&terms={{ title_search }}" alt="Search for title">{{ field }}</a></td>
+                </tr>
+            {% elseif key != 'callList' %}
+                <tr>
+                    <th class="c1">{{ key }}</th>
+                    <td class="c2" colspan="2">{{ field }}</td>
+                </tr>
+            {% else %}
+                {% for i, call in field %}
+                    {% for item_key, item in call %}
+                        <tr>
+                        {% if item_key == 'key' %}
+                            <th class="c2" colspan="2">{{ item_key }}</th>
+                            <td class="c1"><a href="{{ base_URL }}/index.php?page=get_item&item_key={{ item }}" alt="Display item record">{{ item }}</a></td>
+                        {% else %}
+                            <th class="c2" colspan="2">{{ item_key}}</th>
+                            <td class="c1">{{ item }}</td>
+                        {% endif %}
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </table>
+    <br>
+</div>

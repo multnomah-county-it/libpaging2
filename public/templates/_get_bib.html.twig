@@ -1,0 +1,13 @@
+<div class="center-block">
+    <form action="/index.php">
+        <p class="list list-wide">
+            <input type="hidden" name="page" value="get_bib">
+            <label for="bib_key">Bib Key:</label><br>
+            <input type="text" id="bib_key" name="bib_key" value="{{ bib_key }}" size="8" maxlength="8" required><br>
+            <label for="field_list">Field List (use 'marc' for MARC format):</label><br>
+            <textarea class="field_list" id="field_list" name="field_list" wrap="off" rows="2" cols="70" maxlength="256" required>{{ field_list }}</textarea><br><br>
+            <input type="submit" value="Get Record">
+        </p>
+    </form>
+</div>
+<hr>

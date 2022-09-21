@@ -1,0 +1,9 @@
+    <tr>
+        <td>{{ currentLocation }}</td>
+        <td>{{ locationDescription }}</td>
+        <td>{{ itemType }}</td>
+        <td>{{ callNumber }}</td>
+        <td><a href="{{ base_URL }}/index.php?page=search&index=AUTHOR&terms={{ author_search }}" alt="Search for author">{{ author }}</a></td>
+        <td><a href="{{ base_URL }}/index.php?page=search&index=TITLE&terms={{ title_search }}" alt="Search for title">{{ title }}</a></td>
+        <td><a href="{{ base_URL }}/index.php?page=get_item&item_key={{ item }}" alt="Display item record">{{ barcode }}</a></td>
+    </tr>

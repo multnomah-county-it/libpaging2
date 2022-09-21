@@ -1,0 +1,24 @@
+{
+	"name": "multnomah-county-it/libpaging2",
+	"description": "SirsiDynix Symphony ILS Web Services integration",
+	"license": "GPL-3.0",
+	"minimum-stability": "dev",
+	"respositories": [
+		{
+			"url": "https://github.com/multnomah-county-it/libilsws",
+			"type": "vcs"
+		}
+	],
+	"require": {
+		"php": "^7.0",
+		"multnomah-county-it/libilsws": "^1",
+		"symfony/yaml": "*",
+		"twig/twig": "3.x-dev"
+	},
+	"authors": [
+        	{
+			"name": "John Houser",
+			"email": "90853393+john-c-houser@users.noreply.github.com"
+		}
+	]
+}
