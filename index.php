@@ -19,6 +19,7 @@ $config['public_path'] = '/public';
 $styles_path = $config['public_path'] . '/assets/css/styles.css';
 $favicon_path = $config['public_path'] . '/assets/favicon.ico';
 $logo_path = $config['public_path'] . '/assets/logo2016.png';
+$logo_link_path = $config['logo_link_path'];
 $page_title = 'Multnomah County Library Paging Lists';
 
 // Set the default menu item
@@ -54,6 +55,7 @@ echo $template->render([
     'favicon_path' => $favicon_path, 
     'page_title' => $page_title,
     'logo_path' => $logo_path,
+    'logo_link_path' => $logo_link_path,
     'menu_items' => $menu_items
     ]);
 

@@ -1,5 +1,6 @@
 base_path: /var/www/html-dev
 base_URL: http://paging.multcolib.org:8080
+logo_link_path: https://multcolib.org
 BRANCHES:
     ALB: Albina
     BMT: Belmont
