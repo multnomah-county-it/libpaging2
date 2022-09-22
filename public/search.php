@@ -70,7 +70,7 @@ if ( $index && $terms && $field_list ) {
             $author_search = preg_replace("/[\[\],;:'?]/", '', $record['author']);
             $title_search = preg_replace("/[\[\],;:'?]/", '', $record['title']);
 
-            $template = $twig->load('_search_result_list.html.twig');
+            $template = $twig->load('_get_bib_fields.html.twig');
             echo $template->render(['record' => $record, 'author_search' => $author_search, 'title_search' => $title_search, 'base_URL' => $config['base_URL']]);
         }
     }

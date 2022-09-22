@@ -108,7 +108,7 @@ tr:nth-child(even) {
 #record th {
     background-color: #f2f2f2;
     font-size: 80%;
-	padding: .25em;
+	padding: 0.25em;
     text-align: right;
     vertical-align: bottom;
     white-space: nowrap;
@@ -117,9 +117,14 @@ tr:nth-child(even) {
 #record td {
     background-color: #ffffff;
     font-size: 80%;
-	padding: .25em;
+	padding: 0.25em;
 	text-align: left;
     vertical-align: bottom;
+}
+
+#record td.separator {
+    background-color: #ffffff;
+    line-height: 0.25em;
 }
 
 textarea.fieldlist {
