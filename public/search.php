@@ -28,7 +28,7 @@ $indexes = $ilsws->get_catalog_indexes($token);
 
 // Define select statement with user preference selected
 $index_select = "<select form=\"search\" id=\"index\" name=\"index\" required>\n";
-$index_select .= "<option value=\"\">Select Index</option>\n";
+$index_select .= "<option value=\"\">Select Index...</option>\n";
 foreach ($indexes as $index_option) {
     if ( $index == $index_option ) {
         $index_select .= "<option value=\"$index_option\" selected>$index_option</option>\n";

@@ -27,6 +27,11 @@ if ( ! empty($item_key) && ! empty($field_list) ) {
         echo $template->render(['message' => $e->getMessage()]);
     }
 
+    if ( ! empty($ilsws->error) ) {
+        $template = $twig->load('_error.html.twig');
+        echo $template->render(['message' => $ilsws->error]);
+    }
+
     $template = '_get_item_fields.html.twig';
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {

@@ -43,6 +43,11 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
         $title_search = preg_replace("/[\[\],;:'?]/", '', $record['title']);
     }
 
+    if ( ! empty($ilsws->error) ) {
+        $template = $twig->load('_error.html.twig');
+        echo $template->render(['message' => $ilsws->error]);
+    }
+
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
         $template = $twig->load($template);
