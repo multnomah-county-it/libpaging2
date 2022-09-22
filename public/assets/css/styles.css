@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: Helvetica,Arial,'sans serif';
+	font-family: Arial, Helvetica, Sans-Serif;
 	padding: .25em;
 	font-size: 100%;
     background-color: #FFFFFF;
@@ -48,7 +48,7 @@ hr {
 }
 
 textarea {
-    white-space: pre;
+	font-family: Arial, Helvetica, Sans-Serif;
     overflow-wrap: normal;
     overflow-x: auto;
 }
@@ -56,11 +56,11 @@ textarea {
 input.submit {
     color: white;
     background-color: #58585b;
-    border-radius: 4px;
+    border-radius: 6px;
     padding-top: 4px;
     padding-bottom: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 p {
