@@ -1,13 +1,14 @@
 <div class="center-block">
-    <form action="/index.php">
+    <form id="get_item" action="/index.php">
         <p class="list list-wide">
-            <input type="hidden" name="page" value="get_item">
+            <input type="hidden" form="get_item" name="page" value="get_item">
             <label for="item_key">Item Key:</label><br>
-            <input type="text" id="item_key" name="item_key" value="{{ item_key }}" size="14" maxlength="14" required><br>
+            <input type="text" form="get_item" id="item_key" name="item_key" value="{{ item_key }}" size="14" maxlength="14" required><br>
             <label for="field_list">Field List (use * for all fields):</label><br>
-            <textarea class="field_list" id="field_list" name="field_list" wrap="off" rows="2" cols="70" maxlength="256" required>{{ field_list }}</textarea><br><br>
-            <input type="submit" value="Get Record">
+            <textarea class="field_list" form="get_item" id="field_list" name="field_list" rows="2" cols="70" maxlength="256" required>{{ field_list }}</textarea><br><br>
+            <input type="submit" form="get_item" value="Get Record">
         </p>
     </form>
 </div>
 <hr>
+<div id="record">

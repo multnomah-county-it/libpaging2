@@ -8,10 +8,6 @@ body {
     background-color: #FFFFFF;
 }
 
-p {
-    text-align: left;
-}
-
 .center-block {
     display: block;
     margin-left: auto;
@@ -44,6 +40,16 @@ p {
 
 .small {
     font-size: 70%;
+}
+
+textarea {
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
+
+p {
+    text-align: left;
 }
 
 footer {

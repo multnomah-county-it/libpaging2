@@ -27,7 +27,8 @@ $token = $ilsws->connect();
 $indexes = $ilsws->get_catalog_indexes($token);
 
 // Define select statement with user preference selected
-$index_select = "<select id=\"index\" name=\"index\" required>\n";
+$index_select = "<select form=\"search\" id=\"index\" name=\"index\" required>\n";
+$index_select .= "<option value=\"\">Select Index</option>\n";
 foreach ($indexes as $index_option) {
     if ( $index == $index_option ) {
         $index_select .= "<option value=\"$index_option\" selected>$index_option</option>\n";
@@ -51,7 +52,7 @@ echo $template->render([
 if ( $index && $terms && $field_list ) {
 
     try {
-        $response = $ilsws->search_bib($token, $index, $terms, ['j' => $j, 'ct' => $ct, 'includeFields' => $field_list]);
+        $response = $ilsws->search_bib($token, $index, urlencode($terms), ['j' => $j, 'ct' => $ct, 'includeFields' => $field_list]);
     } catch (Exception $e) {
         $template = $twig->load('_error.html.twig');
         echo $template->render(['message' => $e->getMessage()]);
@@ -71,7 +72,13 @@ if ( $index && $terms && $field_list ) {
             $title_search = preg_replace("/[\[\],;:'?]/", '', $record['title']);
 
             $template = $twig->load('_get_bib_fields.html.twig');
-            echo $template->render(['record' => $record, 'author_search' => $author_search, 'title_search' => $title_search, 'base_URL' => $config['base_URL']]);
+            echo $template->render([
+                'record' => $record, 
+                'author_search' => urlencode($author_search), 
+                'title_search' => urlencode($title_search), 
+                'base_URL' => 
+                $config['base_URL']
+                ]);
         }
     }
 } 

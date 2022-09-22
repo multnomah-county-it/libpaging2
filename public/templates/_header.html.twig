@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="robots" content="noindex" />
-        <meta application-name="libpaging2" />
+        <meta name="application-name" content="libpaging2" />
         <meta name="author" content="Multnomah County IT" />
         <meta name="language" content="en" />
         <link rel="stylesheet" type="text/css" href="{{ styles_path }}">
@@ -12,11 +12,11 @@
     </head>
     <body>
         <div class="header">
-            <a class="logo center-flex" href="{{ logo_link_path }}" alt="Link to main website">
-                <img class="logo" src="{{ logo_path }}" alt="Logo"></a>
+            <a class="logo center-flex" href="{{ logo_link_path }}"><img class="logo" src="{{ logo_path }}" 
+                alt="Multnomah County Library Logo"></a>
             <div class="header-right center-flex">
                 {% for menu_item in menu_items %}
-                    &nbsp;&nbsp;<a class="{{ menu_item.class }}" href="{{ menu_item.link }}" alt="{{ menu_item.name }}">{{ menu_item.name }}</a>
+                    &nbsp;&nbsp;<a class="{{ menu_item.class }}" href="{{ menu_item.link }}">{{ menu_item.name }}</a>
                 {% endfor %}
             </div>
         </div>
