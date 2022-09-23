@@ -10,12 +10,12 @@
                 {% elseif key == 'author' %}
                     <tr>
                         <th class="c1">{{ key }}</th>
-                        <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&terms={{ author_search }}">{{ field }}</a></td>
+                        <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&index=AUTHOR&terms={{ author_search }}">{{ field }}</a></td>
                     </tr>
                 {% elseif key == 'title' %}
                     <tr>
                         <th class="c1">{{ key }}</th>
-                        <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&terms={{ title_search }}">{{ field }}</a></td>
+                        <td class="c2" colspan="2"><a href="{{ base_URL }}/index.php?page=search&index=TITLE&terms={{ title_search }}">{{ field }}</a></td>
                     </tr>
                 {% elseif key == '856_u' %}
                     <tr>
