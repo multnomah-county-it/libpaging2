@@ -104,6 +104,11 @@ p.list {
     line-height: 1.6;
 }
 
+p.error {
+    text-align: center;
+    color: #b34141;
+}
+
 table {
 	border: 1px solid white;
 	border-radius: 5px;
@@ -183,10 +188,8 @@ img.logo {
 
 a:link {
 	color: #047695;
-    font-style: none;
     text-decoration: none;
-    padding: 4px;
-    border-radius: 4px;
+    padding: 0px;
 }
 
 a:hover {
