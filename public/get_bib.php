@@ -4,7 +4,7 @@
 $_GET['field_list'] = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
 
 // Set the search values based on defaults and inputs
-$field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode}}';
+$field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode,library}}';
 $bib_key = ! empty($_GET['bib_key']) ? $_GET['bib_key'] : '';
 
 // Connect to ILSWS and get valid search indexes
