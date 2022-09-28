@@ -10,6 +10,10 @@ $terms = ! empty($_GET['terms']) ? $_GET['terms'] : '';
 $ct = ! empty($_GET['ct']) ? $_GET['ct'] : '50';
 $j = ! empty($_GET['j']) ? $_GET['j'] : 'AND';
 
+// Remove accepts from search terms
+setlocale(LC_ALL, "en_US.utf8");
+$terms = iconv("utf-8", "ascii//TRANSLIT", $terms);
+
 // Check the appropriate radio buttons
 $j_AND = ' checked';
 $j_OR = '';
