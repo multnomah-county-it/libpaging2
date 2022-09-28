@@ -14,6 +14,7 @@ $j = ! empty($_GET['j']) ? $_GET['j'] : 'AND';
 setlocale(LC_ALL, "en_US.utf8");
 $terms = iconv("utf-8", "ASCII//TRANSLIT//IGNORE", $terms);
 $terms = preg_replace('/\?/', '', $terms);
+$terms = preg_replace('/\s+/', ' ', $terms);
 
 // Check the appropriate radio buttons
 $j_AND = ' checked';
