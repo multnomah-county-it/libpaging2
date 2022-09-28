@@ -19,8 +19,14 @@ $config['template_path'] = "$install_path/public/templates";
 
 $today = date("Y-m-d");
 
+// Prepare for logging
+$stats = [];
+
 // Loop through the branches
 foreach ($config['BRANCHES'] as $code => $name) {
+
+    // Prepare to count paging records
+    $stats[$today][$code] = 0;
 
     // Get the list for a library
     $list = $ilsws->get_library_paging_list($token, $code);
@@ -30,6 +36,8 @@ foreach ($config['BRANCHES'] as $code => $name) {
     $item_holds = [];
     foreach ($list as $hold) {
         if ( ! empty($hold['currentLocation']) ) {
+            // Increment the count for this branch
+            $stats[$today][$code]++;
             if ( $hold['holdType'] == 'TITLE' ) {
                 array_push($title_holds, $hold);
             } else {
@@ -127,5 +135,11 @@ foreach ($config['BRANCHES'] as $code => $name) {
         }
     }
 }
+
+// Log the statistics
+$log_file = $config['log_path'] . '/' . substr($today, 0, 7) . '.log';
+$f_log = fopen($log_file, 'a') or die("Could not open file: $log_file");
+fwrite($f_log, json_encode($stats) . "\n") or die("Could not write to file: $log_file");
+fclose($f_log);
 
 // EOF
