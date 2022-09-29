@@ -66,16 +66,16 @@
         },
         {
             "name": "multnomah-county-it/libilsws",
-            "version": "v1.0.0-beta.7",
+            "version": "v1.0.0-beta.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/multnomah-county-it/libilsws.git",
-                "reference": "49487c53673cb0c914ae51beddf03f85327a3019"
+                "reference": "55ad5e1120349dd8238c97d690990193ee1652cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/49487c53673cb0c914ae51beddf03f85327a3019",
-                "reference": "49487c53673cb0c914ae51beddf03f85327a3019",
+                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/55ad5e1120349dd8238c97d690990193ee1652cd",
+                "reference": "55ad5e1120349dd8238c97d690990193ee1652cd",
                 "shasum": ""
             },
             "require": {
@@ -105,9 +105,9 @@
             "description": "PHP package to support use of the SirsiDynix Symphony Web Services API (ILSWS)",
             "support": {
                 "issues": "https://github.com/multnomah-county-it/libilsws/issues",
-                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.0-beta.7"
+                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.0-beta.9"
             },
-            "time": "2022-09-20T17:22:34+00:00"
+            "time": "2022-09-29T16:17:44+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -353,12 +353,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "40b6f59430cc17999406a5557c9e178704e92fa8"
+                "reference": "7a2e23ce17c048d2c393a55d76d72eb0dbbf356b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/40b6f59430cc17999406a5557c9e178704e92fa8",
-                "reference": "40b6f59430cc17999406a5557c9e178704e92fa8",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7a2e23ce17c048d2c393a55d76d72eb0dbbf356b",
+                "reference": "7a2e23ce17c048d2c393a55d76d72eb0dbbf356b",
                 "shasum": ""
             },
             "require": {
@@ -422,7 +422,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-14T13:29:42+00:00"
+            "time": "2022-09-28T08:43:25+00:00"
         }
     ],
     "packages-dev": [],

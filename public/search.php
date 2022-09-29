@@ -10,9 +10,6 @@ $terms = ! empty($_GET['terms']) ? $_GET['terms'] : '';
 $ct = ! empty($_GET['ct']) ? $_GET['ct'] : '50';
 $j = ! empty($_GET['j']) ? $_GET['j'] : 'AND';
 
-// Remove accents and punctuation from search terms
-$terms = clean_terms($terms);
-
 // Check the appropriate radio buttons
 $j_AND = ' checked';
 $j_OR = '';
@@ -28,6 +25,9 @@ if ( $j == 'AND' ) {
 $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
 $token = $ilsws->connect();
 $indexes = $ilsws->get_catalog_indexes($token);
+
+// Remove accents and punctuation from search terms
+$terms = $ilsws->prepare_search($terms);
 
 // Define select statement with user preference selected
 $index_select = "<select form=\"search\" id=\"index\" name=\"index\" required>\n";
@@ -71,8 +71,8 @@ if ( $index && $terms && $field_list ) {
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
         foreach ($response as $record) {
-            $author_search = clean_terms($record['author']);
-            $title_search = clean_terms($record['title']);
+            $author_search = $ilsws->prepare_search($record['author']);
+            $title_search = $ilsws->prepare_search($record['title']);
 
             $template = $twig->load('_get_bib_fields.html.twig');
             echo $template->render([
@@ -85,37 +85,5 @@ if ( $index && $terms && $field_list ) {
         }
     }
 } 
-
-/**
- * Removes accents, punctuation, and non-ascii characters to
- * create string acceptable to search engine
- *
- * @param  string $terms
- * @return string $terms
- */
-
-function clean_terms ($terms)
-{
-    // Change utf8 letters with accents to ascii characters
-    setlocale(LC_ALL, "en_US.utf8");
-    $terms = iconv("utf-8", "ASCII//TRANSLIT", $terms);
-
-    // Handle time strings
-    $terms = preg_replace("/(\d{1,2}):(\d{2})/", "$1 $2", $terms);
-
-    // Replace certain characters with a space
-    $terms = preg_replace("/[\.\:\/]/", ' ', $terms);
-
-    // Remove most punctuation and other unwanted characters
-    $terms = preg_replace("/[,;?!&+=><%\'\"\|\{\}\(\)\[\]]/", '', $terms);
-
-    // Remove non-printing characters
-    $terms = preg_replace('/[^\x20-\x7E]/','', $terms);
-
-    // Replace multiple spaces with a single space
-    $terms = preg_replace('/\s+/', ' ', $terms);
-
-    return $terms;
-}
 
 ?>

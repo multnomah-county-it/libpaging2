@@ -1,5 +1,8 @@
 <?php
 
+$ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
+$token = $ilsws->connect();
+
 // Get the parameters from the URL
 $type = $_GET['type'];
 $code = $_GET['code'];
@@ -16,8 +19,8 @@ if ( filesize($data_file) > 2 ) {
 
     foreach ($entries as $line) {
         $entry = json_decode($line, true);
-        $entry['author_search'] = urlencode(preg_replace("/[\[\],:;'?]/", '', $entry['author']));
-        $entry['title_search'] = urlencode(preg_replace("/[\[\],:;'?]/", '', $entry['title']));
+        $entry['author_search'] = urlencode($ilsws->prepare_search($entry['author']));
+        $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
         $entry['base_URL'] = $config['base_URL'];
 
         $template = $twig->load('_list.html.twig');
