@@ -66,16 +66,16 @@
         },
         {
             "name": "multnomah-county-it/libilsws",
-            "version": "v1.0.0-beta.9",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/multnomah-county-it/libilsws.git",
-                "reference": "55ad5e1120349dd8238c97d690990193ee1652cd"
+                "reference": "ba0ff103dc73936bb9fed192c829e964003a6e30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/55ad5e1120349dd8238c97d690990193ee1652cd",
-                "reference": "55ad5e1120349dd8238c97d690990193ee1652cd",
+                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/ba0ff103dc73936bb9fed192c829e964003a6e30",
+                "reference": "ba0ff103dc73936bb9fed192c829e964003a6e30",
                 "shasum": ""
             },
             "require": {
@@ -105,9 +105,9 @@
             "description": "PHP package to support use of the SirsiDynix Symphony Web Services API (ILSWS)",
             "support": {
                 "issues": "https://github.com/multnomah-county-it/libilsws/issues",
-                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.0-beta.9"
+                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.0"
             },
-            "time": "2022-09-29T16:17:44+00:00"
+            "time": "2022-09-30T16:51:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
