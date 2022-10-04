@@ -29,10 +29,11 @@ if ( empty($_GET['page']) ) {
 
 // Define the menu
 $menu_items[0] = ['page' => 'index_list', 'class' => '', 'link' => '/', 'name' => 'Paging Lists'];
-$menu_items[1] = ['page' => 'search', 'class' => '', 'link' => '/index.php?page=search', 'name' => 'Search Catalog'];
-$menu_items[2] = ['page' => 'get_bib', 'class' => '', 'link' => '/index.php?page=get_bib', 'name' => 'Get Bib'];
-$menu_items[3] = ['page' => 'get_item', 'class' => '', 'link' => '/index.php?page=get_item', 'name' => 'Get Item'];
-$menu_items[4] = ['page' => 'about', 'class' => '', 'link' => '/index.php?page=about', 'name' => 'About'];
+$menu_items[1] = ['page' => 'central', 'class' => '', 'link' => '/index.php?page=central', 'name' => 'Central'];
+$menu_items[2] = ['page' => 'search', 'class' => '', 'link' => '/index.php?page=search', 'name' => 'Search Catalog'];
+$menu_items[3] = ['page' => 'get_bib', 'class' => '', 'link' => '/index.php?page=get_bib', 'name' => 'Get Bib'];
+$menu_items[4] = ['page' => 'get_item', 'class' => '', 'link' => '/index.php?page=get_item', 'name' => 'Get Item'];
+$menu_items[5] = ['page' => 'about', 'class' => '', 'link' => '/index.php?page=about', 'name' => 'About'];
 
 for ($i = 0; $i < count($menu_items); $i++) {
     if ( $menu_items[$i]['page'] == $_GET['page'] ) {
