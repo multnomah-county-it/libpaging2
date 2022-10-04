@@ -28,7 +28,7 @@ if ( empty($_GET['page']) ) {
 }
 
 // Define the menu
-$menu_items[0] = ['page' => 'index_list', 'class' => '', 'link' => '/', 'name' => 'Paging Lists'];
+$menu_items[0] = ['page' => 'index_list', 'class' => '', 'link' => '/', 'name' => 'Branch Paging Lists'];
 $menu_items[1] = ['page' => 'central', 'class' => '', 'link' => '/index.php?page=central', 'name' => 'Central'];
 $menu_items[2] = ['page' => 'search', 'class' => '', 'link' => '/index.php?page=search', 'name' => 'Search Catalog'];
 $menu_items[3] = ['page' => 'get_bib', 'class' => '', 'link' => '/index.php?page=get_bib', 'name' => 'Get Bib'];

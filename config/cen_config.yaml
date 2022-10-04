@@ -1,0 +1,985 @@
+---
+categories:
+  audiobooksFictionY:
+    flags: Y-M-A
+    name: 'Audiobooks fiction (Y)'
+    not: ''
+    regex: '#^CD\sYA#'
+  audiobooksJ:
+    flags: J-M-A
+    name: 'Audiobooks j'
+    not: ''
+    regex: '#^CD\sChildren|CD\sj#'
+  audiobooksNonfictionOnlyY:
+    flags: Y-M-A
+    name: 'Audiobooks nonfiction (ONLY Y)'
+    not: ''
+    regex: '#CD\sy#'
+  beginningFacts:
+    flags: J-E-F
+    name: 'Beginning Facts'
+    not: ''
+    regex: '#Facts#'
+  binBooksConcept:
+    flags: J-E-C
+    name: 'Bin books concept'
+    not: ''
+    regex: '#Concept#'
+  binBooksJbb:
+    flags: J-E-B
+    name: 'Bin books jbb'
+    not: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+    regex: '#jbb#'
+  binBooksToddler:
+    flags: J-E-T
+    name: 'Bin books toddler'
+    not: ''
+    regex: '#^jE\sToddler#'
+  biography:
+    flags: A-N-B
+    name: Biography
+    not: ''
+    regex: '#^BIO#'
+  biographyOversize:
+    flags: A-N-O
+    name: 'Biography OVERSIZE'
+    not: ''
+    regex: '#^BIO#'
+  bluJ:
+    flags: J-M-B
+    name: 'BLU j'
+    not: ''
+    regex: '#^BLU(\sChildren\s|[\s-]j\s\d{3})#'
+  bluRayDvds:
+    flags: A-M-B
+    name: 'BLU Ray DVDs'
+    not: '#Children#'
+    regex: '#^BLU\s[^j4]#'
+  cd001399500999:
+    flags: A-M-A
+    name: 'CD 001-399 & 500-999'
+    not: ''
+    regex: '#^CD [0-35-9]\d{2}#'
+  cdB:
+    flags: A-M-A
+    name: 'CD- B-'
+    not: ''
+    regex: '#^CD\sB#'
+  cdBlues:
+    flags: A-M-C
+    name: 'CD Blues'
+    not: ''
+    regex: '#^CD\sBlues#'
+  cdChamber:
+    flags: A-M-C
+    name: 'CD Chamber'
+    not: ''
+    regex: '#^CD\sChamber #'
+  cdChinese:
+    flags: A-M-C
+    name: 'CD CHINESE'
+    not: ''
+    regex: '#^CD\sCHINESE\sMusic#'
+  cdChoral:
+    flags: A-M-C
+    name: 'CD Choral'
+    not: ''
+    regex: '#^CD\sChoral#'
+  cdChristian:
+    flags: A-M-C
+    name: 'CD Christian'
+    not: ''
+    regex: '#^CD\sChristian#'
+  cdConcerto:
+    flags: A-M-C
+    name: 'CD Concerto'
+    not: ''
+    regex: '#^CD\sConcerto #'
+  cdCountry:
+    flags: A-M-C
+    name: 'CD Country'
+    not: ''
+    regex: '#^CD\sCountry#'
+  cdDance:
+    flags: A-M-C
+    name: 'CD Dance'
+    not: ''
+    regex: '#^CD\sDance#'
+  cdEarlyMusic:
+    flags: A-M-C
+    name: 'CD Early Music'
+    not: ''
+    regex: '#^CD\sEarly\sMusic#'
+  cdElectronic:
+    flags: A-M-C
+    name: 'CD Electronic'
+    not: ''
+    regex: '#^CD\sElectroni#'
+  cdFiction:
+    flags: A-M-A
+    name: 'CD Fiction'
+    not: ''
+    regex: '#^CD\sFiction#'
+  cdGospel:
+    flags: A-M-C
+    name: 'CD Gospel'
+    not: ''
+    regex: '#^CD\sGospel #'
+  cdJazz:
+    flags: A-M-C
+    name: 'CD Jazz'
+    not: ''
+    regex: '#^CD\sJazz #'
+  cdKeyboard:
+    flags: A-M-C
+    name: 'CD Keyboard'
+    not: ''
+    regex: '#^CD\sKeyboard#'
+  cdLatin:
+    flags: A-M-C
+    name: 'CD Latin'
+    not: ''
+    regex: '#^CD\sLatin #'
+  cdMovies:
+    flags: A-M-C
+    name: 'CD Movies'
+    not: ''
+    regex: '#^CD\sMovies #'
+  cdMusicals:
+    flags: A-M-C
+    name: 'CD Musicals'
+    not: ''
+    regex: '#^CD\sMusicals#'
+  cdMystery:
+    flags: A-M-A
+    name: 'CD Mystery'
+    not: ''
+    regex: '#^CD\sMystery#'
+  cdNewage:
+    flags: A-M-C
+    name: 'CD NewAge'
+    not: ''
+    regex: '#^CD\sNewAge #'
+  cdOpera:
+    flags: A-M-C
+    name: 'CD Opera'
+    not: ''
+    regex: '#^CD\sOpera#'
+  cdOrchestra:
+    flags: A-M-C
+    name: 'CD Orchestra'
+    not: ''
+    regex: '#^CD\sOrchestra #'
+  cdPercussion:
+    flags: A-M-C
+    name: 'CD Percussion'
+    not: ''
+    regex: '#^CD\sPercussio#'
+  cdPopular:
+    flags: A-M-C
+    name: 'CD Popular'
+    not: ''
+    regex: '#^CD\sPopular #'
+  cdRap:
+    flags: A-M-C
+    name: 'CD Rap'
+    not: ''
+    regex: '#^CD\sRap #'
+  cdReggae:
+    flags: A-M-C
+    name: 'CD Reggae'
+    not: ''
+    regex: '#^CD\sReggae #'
+  cdRussian:
+    flags: A-M-C
+    name: 'CD RUSSIAN'
+    not: ''
+    regex: '#^CD\sRUSSIAN\sMusic#'
+  cdScifi:
+    flags: A-M-A
+    name: 'CD SciFi'
+    not: ''
+    regex: '#^CD\s(SciFi|SF)#'
+  cdSpanish:
+    flags: A-M-C
+    name: 'CD SPANISH'
+    not: ''
+    regex: '#^CD\sSPANISH\sMusic#'
+  cdStrings:
+    flags: A-M-C
+    name: 'CD Strings'
+    not: ''
+    regex: '#^CD\sStrings #'
+  cdSymphony:
+    flags: A-M-C
+    name: 'CD Symphony'
+    not: ''
+    regex: '#^CD\sSymphony#'
+  cdViet:
+    flags: A-M-C
+    name: 'CD VIET'
+    not: ''
+    regex: '#^CD\sVIET\sMusic#'
+  cdVocal:
+    flags: A-M-C
+    name: 'CD Vocal'
+    not: ''
+    regex: '#^CD\sVocal#'
+  cdWedding:
+    flags: A-M-C
+    name: 'CD Wedding'
+    not: ''
+    regex: '#^CD\sWedding#'
+  cdWestern:
+    flags: A-M-A
+    name: 'CD Western'
+    not: ''
+    regex: '#^CD\sWestern#'
+  cdWinds:
+    flags: A-M-C
+    name: 'CD Winds'
+    not: ''
+    regex: '#^CD\sWinds #'
+  cdWorld:
+    flags: A-M-C
+    name: 'CD World'
+    not: ''
+    regex: '#^CD\sWorld\s[A-Z0-9][A-Z0-9&]*\s?(\d {4})?[a-z]?\s?$#'
+  cdWorldAfrica:
+    flags: A-M-C
+    name: 'CD World Africa'
+    not: ''
+    regex: '#^CD\sWorld\sAfrica#'
+  cdWorldAsia:
+    flags: A-M-C
+    name: 'CD World Asia'
+    not: ''
+    regex: '#^CD\sWorld\sAsia#'
+  cdWorldEurope:
+    flags: A-M-C
+    name: 'CD World Europe'
+    not: ''
+    regex: '#^CD\sWorld\sEurope#'
+  cdWorldNorthAmerica:
+    flags: A-M-C
+    name: 'CD World North America'
+    not: ''
+    regex: '#^CD\sWorld\sNorth\sAmerica#'
+  cdWorldPacific:
+    flags: A-M-C
+    name: 'CD World Pacific'
+    not: ''
+    regex: '#^CD\sWorld\sPacific#'
+  cdWorldSouthAmerica:
+    flags: A-M-C
+    name: 'CD World South America'
+    not: ''
+    regex: '#^CD\sWorld\sSouth\sAmerica#'
+  cdXmas:
+    flags: A-M-C
+    name: 'CD Xmas'
+    not: ''
+    regex: '#^CD\sXmas #'
+  deweyRange_10_390499:
+    flags: A-N
+    name: 390-499
+    not: ''
+    regex:
+      - 390
+      - 499
+  deweyRange_11_400_Media:
+    flags: A-M-A
+    name: '400 Media'
+    not: ''
+    regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?)4\d{2}#'
+  deweyRange_12_700711:
+    flags: A-N
+    name: 700-711
+    not: ''
+    regex:
+      - 700
+      - 711
+  deweyRange_13_720758:
+    flags: A-N
+    name: 720-758
+    not: ''
+    regex:
+      - 718
+      - 758
+  deweyRange_14_010299_OVERSIZE:
+    flags: A-N-O
+    name: '010-299 OVERSIZE'
+    not: ''
+    regex:
+      - 10
+      - 299
+  deweyRange_15_390499_OVERSIZE:
+    flags: A-N-O
+    name: '390-499 OVERSIZE'
+    not: ''
+    regex:
+      - 390
+      - 499
+  deweyRange_16_700711_OVERSIZE:
+    flags: A-N-O
+    name: '700-711 OVERSIZE'
+    not: ''
+    regex:
+      - 700
+      - 711
+  deweyRange_17_718789_OVERSIZE:
+    flags: A-N-O
+    name: '718-789 OVERSIZE'
+    not: ''
+    regex:
+      - 718
+      - 789
+  deweyRange_18_759899:
+    flags: A-N
+    name: 759-899
+    not: ''
+    regex:
+      - 759
+      - 899
+  deweyRange_19_790999_OVERSIZE:
+    flags: A-N-O
+    name: '790-999 OVERSIZE'
+    not: '' 
+    regex:
+      - 790
+      - 999
+  deweyRange_1_001009_OVERSIZE:
+    flags: A-N-O
+    name: '001-009 OVERSIZE'
+    not: ''
+    regex:
+      - 1
+      - 9
+  deweyRange_20_900999:
+    flags: A-N
+    name: 900-999
+    not: ''
+    regex:
+      - 900
+      - 999
+  deweyRange_2_300389_OVERSIZE:
+    flags: A-N-O
+    name: '300-389 OVERSIZE'
+    not: ''
+    regex:
+      - 300
+      - 389
+  deweyRange_3_500699_OVERSIZE:
+    flags: A-N-O
+    name: '500-699 OVERSIZE'
+    not: ''
+    regex:
+      - 500
+      - 699
+  deweyRange_4_712717_OVERSIZE:
+    flags: A-N-O
+    name: '712-717 OVERSIZE'
+    not: ''
+    regex:
+      - 712
+      - 717
+  deweyRange_5_001009:
+    flags: A-N
+    name: 001-009
+    not: '#Beginning Facts#'
+    regex:
+      - 1
+      - 9
+  deweyRange_6_300389:
+    flags: A-N
+    name: 300-389
+    not: '#Beginning Facts#'
+    regex:
+      - 300
+      - 389
+  deweyRange_7_500699:
+    flags: A-N
+    name: 500-699
+    not: '#Beginning Facts#'
+    regex:
+      - 500
+      - 699
+  deweyRange_8_712717:
+    flags: A-N
+    name: 712-717
+    not: '#Beginning Facts#'
+    regex:
+      - 712
+      - 717
+  deweyRange_9_010299:
+    flags: A-N
+    name: 010-299
+    not: ''
+    regex:
+      - 10
+      - 299
+  dvd000999:
+    flags: A-M-D
+    name: 'DVD 000 - 999'
+    not: ''
+    regex: '#DVD\s((RUSSIAN|CHINESE|VIET|SPANISH)\s)?[0-35-9]\d{2}#'
+  dvdAction:
+    flags: A-M-D
+    name: 'DVD Action'
+    not: ''
+    regex: '#DVD\sAction#'
+  dvdComedy:
+    flags: A-M-D
+    name: 'DVD Comedy'
+    not: ''
+    regex: '#DVD\sComedy#'
+  dvdDrama:
+    flags: A-M-D
+    name: 'DVD Drama'
+    not: ''
+    regex: '#DVD\sDrama#'
+  dvdForeign:
+    flags: A-M-D
+    name: 'DVD Foreign'
+    not: ''
+    regex: '#DVD\sForeign#'
+  dvdHorror:
+    flags: A-M-D
+    name: 'DVD Horror'
+    not: ''
+    regex: '#DVD\sHorror#'
+  dvdJ:
+    flags: J-M-D
+    name: 'DVD j'
+    not: ''
+    regex: '#^DVD\sChildren\s#'
+  dvdJNonfiction:
+    flags: J-M-D
+    name: 'DVD j nonfiction'
+    not: ''
+    regex: '#^DVD[\s-]j\s\d{3}#'
+  dvdMusicals:
+    flags: A-M-D
+    name: 'DVD Musicals'
+    not: ''
+    regex: '#DVD\sMusicals#'
+  dvdScifi:
+    flags: A-M-D
+    name: 'DVD SciFi'
+    not: ''
+    regex: '#DVD\sSciFi#'
+  dvdWestern:
+    flags: A-M-D
+    name: 'DVD Western'
+    not: ''
+    regex: '#DVD\sWestern#'
+  dvdrom:
+    flags: A-M-D
+    name: DVDROM
+    not: '#[\s-]j\s|j[EB]|jbb|Children#'
+    regex: '#DVDROM#'
+  easyPianoScores:
+    flags: A-S-E
+    name: 'Easy Piano Score'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
+  fiction:
+    flags: A-F
+    name: Fiction
+    not: ''
+    regex: '#^FICTION#'
+  gn:
+    flags: A-G-F
+    name: GN
+    not: ''
+    regex: '#^GN\s[a-zA-Z].*$#'
+  gnNonfiction:
+    flags: A-G-N
+    name: 'GN nonfiction'
+    not: ''
+    regex: '#^GN\s(\d|B-).*$#'
+  infoBasica:
+    flags: J-W-N
+    name: 'Informacion Basica'
+    not: ''
+    regex: '#Datos#'
+  itu2019sInTheBag:
+    flags: K
+    name: 'It\u2019s in the Bag!'
+    not: ''
+    regex: '#(^TODDLER)|(Toddler\sCurriculum)#'
+  j:
+    flags: J-F
+    name: j
+    not: '#(Holiday|\bj\sBIO\b)#'
+    regex: '#^j\s[^\d][^-]#'
+  jBiography:
+    flags: J-N-B
+    name: 'j Biography'
+    not: '#(Beginning\sFacts|Parenting|Holiday|\by\sBIO\b)#'
+    regex: '#\bj\sBIO\b#'
+  jHoliday:
+    flags: J-H
+    name: 'j Holiday'
+    not: ''
+    regex: '#Holiday#'
+  jLargePrintFiction:
+    flags: J-P
+    name: 'j Large Print Fiction'
+    not: ''
+    regex: '#LGE-TYPE\w*\s?j\s?|\s?j\s\w*LGE-TYPE#'
+  jNonfiction:
+    flags: J-N
+    name: 'j non-fiction'
+    not: '#(Beginning\sFacts|Parenting|Holiday)#'
+    regex: '#^j\s\d{3}#'
+  jWorldLanguageBb:
+    flags: J-W-B
+    name: 'World Languages Board Book'
+    # not: '#(Inf)(\.) (Basi)#'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  jWorldLanguageFiction:
+    flags: J-W-F
+    name: 'World Languages fiction for kids'
+    # not: '#(Inf)(\.) (Basi)#'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  jWorldLanguageMedia:
+    flags: J-W-M
+    name: 'World Languages media for kids'
+    # not: '#(Inf)(\.) (Basi)#'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  jWorldLanguageNonfiction:
+    flags: J-W-N
+    name: 'World Languages nonfiction for kids'
+    # not: '#(Inf)(\.) (Basi)#'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  je:
+    flags: J-E-E
+    name: JE
+    not: '#Beginning\sFacts#'
+    regex: '#^(JE|jE)\s[A-Z][^a-z]#'
+  jgnf:
+    flags: J-G-F
+    name: 'jgn Fiction'
+    not: ''
+    regex: '#^jgn#'
+  jgnnf:
+    flags: J-G-N
+    name: 'jgn Non-Fiction'
+    not: ''
+    regex: '#^jgn#'
+  killawatt:
+    flags: K
+    name: Killawatt
+    not: ''
+    regex: '#KILLAWATT#'
+  lgetypeBiography:
+    flags: A-P
+    name: 'LGE-TYPE Biography'
+    not: ''
+    regex: '#^LGE-TYPE\sBIO#'
+  lgetypeFiction:
+    flags: A-P
+    name: 'LGE-TYPE FICTION'
+    not: ''
+    regex: '#^LGE-TYPE\sFICTION#'
+  lgetypeMystery:
+    flags: A-P
+    name: 'LGE-TYPE MYSTERY'
+    not: ''
+    regex: '#^LGE-TYPE\sMYSTERY#'
+  lgetypeNonfiction:
+    flags: A-P
+    name: 'LGE-TYPE non-fiction'
+    not: ''
+    regex: '#^LGE-TYPE\s\d{3}#'
+  lgetypeScifi:
+    flags: A-P
+    name: 'LGE-TYPE SCIFI'
+    not: ''
+    regex: '#^LGE-TYPE\s(SCIFI|SF)#'
+  lgetypeWestern:
+    flags: A-P
+    name: 'LGE-TYPE WESTERN'
+    not: ''
+    regex: '#^LGE-TYPE\sWESTERN#'
+  lgetypeY:
+    flags: Y-P
+    name: 'LGE-TYPE y'
+    not: ''
+    regex: '#^LGE-TYPE\sy#'
+  map:
+    flags: A-N
+    name: Map
+    not: ''
+    regex: '#^(O-|R-)?MAP\s#'
+  mapRoom:
+    flags: 018-CEN
+    name: 'Map Room'
+    not: ''
+    regex: '#^(O-|R-)?MAP\s#'
+  mapRoomAtlas:
+    flags: 018-CEN-A
+    name: 'Map Room Atlas'
+    not: ''
+    regex: '#^(O-|R-)?MAP\s#'
+  mapRoomOversize:
+    flags: 018-CEN-O
+    name: 'Map Room Atlas'
+    not: ''
+    regex: '#^(O-|R-)?MAP\s#'
+  miniatureScores:
+    flags: A-S-M
+    name: 'Miniature Scores'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
+  multiHandScores:
+    flags: A-S-H
+    name: 'Multiple hands piano scores'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
+  musicCds:
+    flags: J-M-C
+    name: 'Music CDs'
+    not: ''
+    regex: '#^CD\sj#'
+  musicScores:
+    flags: A-S
+    name: 'Music Score'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
+  mystery:
+    flags: A-F-M
+    name: Mystery
+    not: ''
+    regex: '#^MYSTERY#'
+  newAdultFiction:
+    flags: NEW
+    name: 'New Adult Fiction'
+    not: '#\sj\s?E?#'
+    regex: '#^[^j].*#'
+  newAdultNonfiction:
+    flags: NEW
+    name: 'New Adult Nonfiction'
+    not: '#\sj\s?E?#'
+    regex: '#^[0-35-9]\d#'
+  newJ:
+    flags: NEW
+    name: 'NEW j'
+    not: ''
+    regex: '#^j|\sj\s?E?#'
+  pageturners:
+    flags: K
+    name: Pageturners
+    not: ''
+    regex: '#PAGETURNERS#'
+  parenting:
+    flags: J-N-P
+    name: Parenting
+    not: ''
+    regex: '#Parenting#'
+  preschoolCurriculumBag:
+    flags: K
+    name: 'Preschool Curriculum Bag'
+    not: ''
+    regex: '#^(PRESCHOOL|BABY)#'
+  reader:
+    flags: J-E-R
+    name: Reader
+    not: ''
+    regex: '#(Blue|Red|Green|Yellow)\sReader#'
+  scoresInParts:
+    flags: A-S-P
+    name: 'Music scores in parts'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
+  sf:
+    flags: A-F-S
+    name: SF
+    not: ''
+    regex: '#^SF#'
+  sheetMusicOversize:
+    flags: A-S-O
+    name: 'Sheet Music OVERSIZE'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M-#'
+  shortStories:
+    flags: A-F
+    name: 'Short Stories'
+    not: ''
+    regex: '#^SS#'
+  stx001822:
+    flags: 003-CEN
+    name: 'STX 001-822'
+    not: ''
+    regex:
+      - 1
+      - 822
+  stx823999:
+    flags: 003-CEN
+    name: 'STX 823-999'
+    not: ''
+    regex:
+      - 823
+      - 999
+  toddler:
+    flags: J-E-T
+    name: Toddler
+    not: ''
+    regex: '#(^TODDLER)|(Toddler\sCurriculum)#'
+  unmatched:
+    name: Unmatched
+  urban:
+    flags: A-F-U
+    name: 'Urban Fiction'
+    not: ''
+    regex: '#^URBAN|FICTION#'
+  western:
+    flags: A-F-W
+    name: Western
+    not: ''
+    regex: '#^WESTERN#'
+  worldLanguageFiction:
+    flags: A-W-F
+    name: 'World Language Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  worldLanguageMedia:
+    flags: A-W-M
+    name: 'World Language Media'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  worldLanguageNonfiction:
+    flags: A-W-N
+    name: 'World Language Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  y:
+    flags: Y-F
+    name: y
+    not: '#\by\sBIO\s\b#'
+    regex: '#^y\s[^\d]#'
+  yBiography:
+    flags: Y-N-B
+    name: 'y Biography'
+    not: ''
+    regex: '#\by\sBIO\s\b#'
+  yNonfiction:
+    flags: Y-N
+    name: 'y Non-Fiction'
+    not: ''
+    regex: '#^y\s\d{3}#'
+  yWorldLanguage:
+    flags: Y-W-F
+    name: 'y World Language'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\sy\s#'
+  yWorldLanguageNonfiction:
+    flags: Y-W-F
+    name: 'y World Language Nonfiction'
+    not: ''
+    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\sy\s#'
+  ygn:
+    flags: Y-G-F
+    name: 'ygn fiction'
+    not: ''
+    regex: '#^ygn#'
+  ygnNonFiction:
+    flags: Y-G-N
+    name: 'ygn Non Fiction'
+    not: ''
+    regex: '#^ygn#'
+  zine:
+    flags: A-Z
+    name: ZINE
+    not: ''
+    regex: '#^ZINE#'
+lists:
+  cds:
+    categories:
+      - cdBlues
+      - cdChamber
+      - cdChinese
+      - cdChoral
+      - cdChristian
+      - cdConcerto
+      - cdCountry
+      - cdDance
+      - cdEarlyMusic
+      - cdElectronic
+      - cdGospel
+      - cdJazz
+      - cdKeyboard
+      - cdLatin
+      - cdMovies
+      - cdMusicals
+      - cdNewage
+      - cdOpera
+      - cdOrchestra
+      - cdPercussion
+      - cdPopular
+      - cdRap
+      - cdReggae
+      - cdRussian
+      - cdSpanish
+      - cdStrings
+      - cdSymphony
+      - cdViet
+      - cdVocal
+      - cdWedding
+      - cdWinds
+      - cdWorld
+      - cdWorldAfrica
+      - cdWorldAsia
+      - cdWorldEurope
+      - cdWorldNorthAmerica
+      - cdWorldPacific
+      - cdWorldSouthAmerica
+      - cdXmas
+    defaultListNumber: 1
+    name: 'Music CDs'
+  cl:
+    categories:
+      - newJ
+      - bluJ
+      - dvdJ
+      - dvdJNonfiction
+      - je
+      - binBooksJbb
+      - binBooksConcept
+      - binBooksToddler
+      - preschoolCurriculumBag
+      - itu2019sInTheBag
+      - toddler
+      - musicCds
+      - audiobooksJ
+      - beginningFacts
+      - reader
+      - parenting
+      - jWorldLanguageFiction
+      - jWorldLanguageNonfiction
+      - jWorldLanguageMedia
+      - jWorldLanguageBb
+      - infoBasica
+      - j
+      - jNonfiction
+      - jBiography
+      - jHoliday
+      - jgnf
+      - jgnnf
+      - jLargePrintFiction
+    defaultListNumber: 1
+    name: CL
+  dvds:
+    categories:
+      - cdFiction
+      - cdMystery
+      - cdScifi
+      - cdWestern
+      - cd001399500999
+      - cdB
+      - bluRayDvds
+      - dvdDrama
+      - dvdComedy
+      - dvdAction
+      - dvdHorror
+      - dvdMusicals
+      - dvdScifi
+      - dvdWestern
+      - dvdForeign
+      # - worldLanguageDvd
+      - worldLanguageMedia
+      - dvd000999
+      - dvdrom
+    defaultListNumber: 1
+    name: 'DVDs & Audiobooks'
+  hum:
+    categories:
+      - musicScores
+      - easyPianoScores
+      - multiHandScores
+      - miniatureScores
+      - scoresInParts
+      - sheetMusicOversize
+      - deweyRange_9_010299
+      - deweyRange_10_390499
+      - deweyRange_11_400_Media
+      - deweyRange_12_700711
+      - deweyRange_13_720758
+      - deweyRange_14_010299_OVERSIZE
+      - deweyRange_15_390499_OVERSIZE
+      - deweyRange_16_700711_OVERSIZE
+      - deweyRange_17_718789_OVERSIZE
+      - gn
+      - sf
+      - gnNonfiction
+      - deweyRange_18_759899
+      - map
+      - mapRoom
+      - mapRoomAtlas
+      - mapRoomOversize
+      - worldLanguageFiction
+      - worldLanguageNonfiction
+      - yWorldLanguage
+      - yWorldLanguageNonfiction
+      - deweyRange_19_790999_OVERSIZE
+      - biographyOversize
+      - deweyRange_20_900999
+      - biography
+    defaultListNumber: 3
+    name: HUM
+  new:
+    categories:
+      - newAdultFiction
+      - newAdultNonfiction
+      - killawatt
+      - unmatched
+    defaultListNumber: 1
+    name: 'NEW & Unmatched'
+  pl:
+    categories:
+      - lgetypeFiction
+      - lgetypeY
+      - lgetypeMystery
+      - lgetypeScifi
+      - lgetypeWestern
+      - lgetypeNonfiction
+      - lgetypeBiography
+      - mystery
+      - audiobooksFictionY
+      - audiobooksNonfictionOnlyY
+      - yNonfiction
+      - yBiography
+      - y
+      - ygn
+      - ygnNonFiction
+      - shortStories
+      - fiction
+      - western
+      - urban
+    defaultListNumber: 1
+    name: PL
+  sb:
+    categories:
+      - zine
+      - deweyRange_1_001009_OVERSIZE
+      - deweyRange_2_300389_OVERSIZE
+      - deweyRange_3_500699_OVERSIZE
+      - deweyRange_4_712717_OVERSIZE
+      - deweyRange_5_001009
+      - deweyRange_6_300389
+      - deweyRange_7_500699
+      - deweyRange_8_712717
+    defaultListNumber: 2
+    name: S&B
+  stx:
+    categories:
+      - stx001822
+      - pageturners
+      - stx823999
+    defaultListNumber: 1
+    name: STX

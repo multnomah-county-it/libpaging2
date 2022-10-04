@@ -34,19 +34,27 @@ if ( filesize($data_file) > 2 ) {
             $match = 0;
             if ( ! empty($category['flags']) && $category['flags'] == $entry['currentLocation'] ) {
 
-                $regex = ! empty($category['regex']) ? $category['regex'] : '';
-                $not = ! empty($category['not']) ? $category['not'] : '';
+                $regex = $category['regex'];
+                $not = $category['not'];
 
                 if ( is_array($category['regex']) && preg_match('/^deweyRange/', $key) ) {
                     $dewey = preg_replace('/^(\d{3})(.*)/', "$1", $entry['callNumber']);
                     if ( $dewey >= $category['regex'][0] && $dewey <= $category['regex'][1] ) {
                         $match = 1;
                     }
-                } elseif ( ! is_array($regex) && preg_match("$regex", $entry['callNumber']) ) {
-                    $match = 1;
+                } elseif ( ! is_array($regex) ) {
+                    if ( preg_match("$regex", null) === false ) {
+                        error_log("\nInvalid regex in \"regex\": " . $regex . "\n");
+                    } elseif ( preg_match("$regex", $entry['callNumber']) ) {
+                        $match = 1;
+                    }
                 }
-                if ( $not && preg_match("$not", $entry['callNumber']) ) {
-                    $match = 0;
+                if ( ! empty($not) ) {
+                    if ( preg_match("$not", null) === false ) {
+                        error_log("\nInvalid regex in \"not\": " . $not . "\n");
+                    } elseif ( preg_match("$not", $entry['callNumber']) ) {
+                        $match = 0;
+                    }
                 }
                 if ( $match ) {
                     // We match, so push the entry into the $data structure from which we'll report

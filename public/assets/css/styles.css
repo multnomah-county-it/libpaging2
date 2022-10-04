@@ -42,6 +42,15 @@ body {
     font-size: 70%;
 }
 
+.white {
+    background-color: white !important;
+}
+
+.grey {
+    background-color: #58585b !important;
+    color: white;
+}
+
 hr {
     border: 1px solid #6ac074;
     display: block;
@@ -110,13 +119,13 @@ p.error {
 }
 
 table {
-	border: 1px solid white;
-	border-radius: 5px;
+	border: none;
+    margin-top: 10px;
 }
 
 th {
 	padding: .25em;
-    font-size: 80%;
+    font-size: 70%;
 	text-align: left;
     vertical-align: bottom;
     white-space: nowrap;
@@ -124,12 +133,26 @@ th {
 
 td {
 	padding: .25em;
-    font-size: 80%;
+    font-size: 70%;
 	text-align: left;
     vertical-align: bottom;
 }
 
-tr:nth-child(even) {
+td.instructions {
+    color: red;
+}
+
+th.title {
+    background-color: white !important;
+    border: none;
+    color: #745085;
+    font-size: larger;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
