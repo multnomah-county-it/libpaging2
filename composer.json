@@ -2,7 +2,7 @@
 	"name": "multnomah-county-it/libpaging2",
 	"description": "SirsiDynix Symphony ILS Web Services integration",
 	"license": "GPL-3.0",
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
 	"respositories": [
 		{
 			"url": "https://github.com/multnomah-county-it/libilsws",

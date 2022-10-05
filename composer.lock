@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e3005388f3fdd840c2466fd17686f49",
+    "content-hash": "672986aa1bbd23b185cd90bb2d496783",
     "packages": [
         {
             "name": "curl/curl",
@@ -66,16 +66,16 @@
         },
         {
             "name": "multnomah-county-it/libilsws",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/multnomah-county-it/libilsws.git",
-                "reference": "ba0ff103dc73936bb9fed192c829e964003a6e30"
+                "reference": "e2edf10f26add1d92a33fd4fecaab0bc9ef1511e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/ba0ff103dc73936bb9fed192c829e964003a6e30",
-                "reference": "ba0ff103dc73936bb9fed192c829e964003a6e30",
+                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/e2edf10f26add1d92a33fd4fecaab0bc9ef1511e",
+                "reference": "e2edf10f26add1d92a33fd4fecaab0bc9ef1511e",
                 "shasum": ""
             },
             "require": {
@@ -105,13 +105,13 @@
             "description": "PHP package to support use of the SirsiDynix Symphony Web Services API (ILSWS)",
             "support": {
                 "issues": "https://github.com/multnomah-county-it/libilsws/issues",
-                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.0"
+                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.0.1"
             },
-            "time": "2022-09-30T16:51:14+00:00"
+            "time": "2022-10-05T22:43:04+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "dev-main",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -132,7 +132,6 @@
             "suggest": {
                 "ext-ctype": "For best performance"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -194,7 +193,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "dev-main",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -215,7 +214,6 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -278,7 +276,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "4.4.x-dev",
+            "version": "v4.4.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -329,7 +327,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/4.4"
+                "source": "https://github.com/symfony/yaml/tree/v4.4.45"
             },
             "funding": [
                 {
@@ -353,12 +351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "7a2e23ce17c048d2c393a55d76d72eb0dbbf356b"
+                "reference": "6ddd95c7096220acfd9d6db1ed3e7de89a27e698"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7a2e23ce17c048d2c393a55d76d72eb0dbbf356b",
-                "reference": "7a2e23ce17c048d2c393a55d76d72eb0dbbf356b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6ddd95c7096220acfd9d6db1ed3e7de89a27e698",
+                "reference": "6ddd95c7096220acfd9d6db1ed3e7de89a27e698",
                 "shasum": ""
             },
             "require": {
@@ -422,12 +420,12 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-28T08:43:25+00:00"
+            "time": "2022-10-05T06:26:51+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "twig/twig": 20
     },
