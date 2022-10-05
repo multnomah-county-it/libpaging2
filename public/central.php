@@ -5,12 +5,11 @@ use Symfony\Component\Yaml\Yaml;
 $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
 $token = $ilsws->connect();
 
-// Get the parameters from the URL
 $type = 'title';
 $code = 'CEN';
 $name = $config['BRANCHES'][$code];
-
 $display_type = ucfirst($type);
+$cat_counts = [];
 
 $data_file = $config['data_path'] . "/$code" . "_$type.json";
 if ( filesize($data_file) > 2 ) {
@@ -21,6 +20,7 @@ if ( filesize($data_file) > 2 ) {
     // Prepare the buckets to put our data in
     foreach ($cen_config['categories'] as $key => $category) {
         $data[$key] = [];
+        $cat_counts[$category['name']] = 0;
     }
 
     // Loop through the sorted data lines
@@ -59,15 +59,29 @@ if ( filesize($data_file) > 2 ) {
                 if ( $match ) {
                     // We match, so push the entry into the $data structure from which we'll report
                     array_push($data[$key], $entry);
-                    $match = 0;
-                }
+                    $cat_counts[$category['name']]++;
+
+                    continue 2;
+                } 
             }
         }
         if ( ! $match ) {
             // Nothing matched, so put the entry into the "unmatched" category
             array_push($data['unmatched'], $entry);
+            $cat_counts[$cen_config['categories']['unmatched']['name']]++;
         }
     }
+
+    $list_counts['Total'] = 0;
+    foreach ($cen_config['lists'] as $list) {
+        $list_counts[$list['name']] = 0;
+        foreach ($list['categories'] as $category) {
+            $list_counts[$list['name']] += $cat_counts[$cen_config['categories'][$category]['name']];
+            $list_counts['Total'] += $cat_counts[$cen_config['categories'][$category]['name']];
+        }
+    }
+
+    echo $twig->render('_central_counts.html.twig', ['list_counts' => $list_counts]);
 
     // Loop through each list
     foreach ($cen_config['lists'] as $key => $list) {
@@ -75,8 +89,7 @@ if ( filesize($data_file) > 2 ) {
         $list['today'] = $today;
         $list['type'] = $display_type;
 
-        $template = $twig->load('_central_list_start.html.twig');
-        echo $template->render($list);
+        echo $twig->render('_central_list_start.html.twig', $list);
 
         foreach ($list['categories'] as $category) {
 
@@ -84,28 +97,24 @@ if ( filesize($data_file) > 2 ) {
 
             if ( ! empty($data[$category]) ) {
 
-                $template = $twig->load('_central_category_start.html.twig');
-                echo $template->render(['name' => $name]);
+                echo $twig->render('_central_category_start.html.twig', ['name' => $name]);
 
                 foreach ($data[$category] as $entry) {
                     $entry['author_search'] = urlencode($ilsws->prepare_search($entry['author']));
                     $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
                     $entry['base_URL'] = $config['base_URL'];
 
-                    $template = $twig->load('_list.html.twig');
-                    echo $template->render($entry);
+                    echo $twig->render('_list.html.twig', $entry);
                 }
             }
         }
 
-        $template = $twig->load('_central_list_end.html.twig');
-        echo $template->render();
+        echo $twig->render('_central_list_end.html.twig', []);
     }
 
 } else {
 
-    $template= $twig->load('_list_empty.html.twig');
-    echo $template->render(['type' => $type]);
+    echo $twig->render('_list_empty.html.twig', ['type' => $type]);
 }
 
 ?>

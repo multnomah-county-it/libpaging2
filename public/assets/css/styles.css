@@ -51,6 +51,10 @@ body {
     color: white;
 }
 
+.spacing {
+    padding-top: 0.5em;
+}
+
 hr {
     border: 1px solid #6ac074;
     display: block;

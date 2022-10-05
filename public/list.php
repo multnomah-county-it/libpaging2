@@ -14,8 +14,12 @@ $data_file = $config['data_path'] . "/$code" . "_$type.json";
 if ( filesize($data_file) > 2 ) {
     $entries = file($data_file);
 
-    $template = $twig->load('_list_start.html.twig');
-    echo $template->render(['type' => $display_type, 'name' => $name, 'today' => $today]);
+    echo $twig->render('_list_start.html.twig', [
+        'list_count' => count($entries),
+        'type' => $display_type, 
+        'name' => $name, 
+        'today' => $today
+        ]);
 
     foreach ($entries as $line) {
         $entry = json_decode($line, true);
@@ -23,17 +27,14 @@ if ( filesize($data_file) > 2 ) {
         $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
         $entry['base_URL'] = $config['base_URL'];
 
-        $template = $twig->load('_list.html.twig');
-        echo $template->render($entry);
+        echo $twig->render('_list.html.twig', $entry);
     }
 
-    $template = $twig->load('_list_end.html.twig');
-    echo $template->render();
+    echo $twig->render('_list_end.html.twig', []);
 
 } else {
 
-    $template= $twig->load('_list_empty.html.twig');
-    echo $template->render(['type' => $type]);
+    echo $twig->render('_list_empty.html.twig', ['type' => $type]);
 }
 
 ?>

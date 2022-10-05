@@ -12,6 +12,8 @@ $config['bin_path'] = $config['base_path'] . '/bin';
 // Initialize the Twig environment
 $loader = new \Twig\Loader\FilesystemLoader($config['template_path']);
 $twig = new \Twig\Environment($loader, ['cache' => $config['template_path'] . '/cache']);
+// $twig = new \Twig\Environment($loader, ['debug' => true, 'cache' => $config['template_path'] . '/cache']);
+// $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 // Variables for the header
 $today = date("Y-m-d");

@@ -536,26 +536,22 @@ categories:
   jWorldLanguageBb:
     flags: J-W-B
     name: 'World Languages Board Book'
-    # not: '#(Inf)(\.) (Basi)#'
-    not: ''
+    not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
   jWorldLanguageFiction:
     flags: J-W-F
     name: 'World Languages fiction for kids'
-    # not: '#(Inf)(\.) (Basi)#'
-    not: ''
+    not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
   jWorldLanguageMedia:
     flags: J-W-M
     name: 'World Languages media for kids'
-    # not: '#(Inf)(\.) (Basi)#'
-    not: ''
+    not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
   jWorldLanguageNonfiction:
     flags: J-W-N
     name: 'World Languages nonfiction for kids'
-    # not: '#(Inf)(\.) (Basi)#'
-    not: ''
+    not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
   je:
     flags: J-E-E
@@ -799,6 +795,14 @@ categories:
     not: ''
     regex: '#^ZINE#'
 lists:
+  new:
+    categories:
+      - newAdultFiction
+      - newAdultNonfiction
+      - killawatt
+      - unmatched
+    defaultListNumber: 1
+    name: 'NEW & Unmatched'
   cds:
     categories:
       - cdBlues
@@ -932,14 +936,6 @@ lists:
       - biography
     defaultListNumber: 3
     name: HUM
-  new:
-    categories:
-      - newAdultFiction
-      - newAdultNonfiction
-      - killawatt
-      - unmatched
-    defaultListNumber: 1
-    name: 'NEW & Unmatched'
   pl:
     categories:
       - lgetypeFiction
