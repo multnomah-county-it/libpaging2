@@ -12,8 +12,7 @@ $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
 $token = $ilsws->connect();
 
 // Display the form
-$template= $twig->load('_get_bib.html.twig');
-echo $template->render([
+echo $twig->render('_get_bib.html.twig', [
     'bib_key' => $bib_key,
     'field_list' => $field_list
     ]);
@@ -25,8 +24,7 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
         try {
             $record = $ilsws->get_bib_marc($token, $bib_key);
         } catch (Exception $e) {
-            $template = $twig->load('_error.html.twig');
-            echo $template->render(['message' => $e->getMessage()]);
+            echo $twig->render('_error.html.twig', ['message' => $e->getMessage()]);
         } 
         $template = '_get_bib_marc.html.twig';
 
@@ -35,8 +33,7 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
         try {
             $record = $ilsws->get_bib($token, $bib_key, $field_list);
         } catch (Exception $e) {
-            $template = $twig->load('_error.html.twig');
-            echo $template->render(['message' => $e->getMessage()]);
+            echo $twig->render('_error.html.twig', ['message' => $e->getMessage()]);
         } 
         $template = '_get_bib_fields.html.twig';
         $author_search = preg_replace("/[\[\],;:'?]/", '', $record['author']);
@@ -44,14 +41,17 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
     }
 
     if ( ! empty($ilsws->error) ) {
-        $template = $twig->load('_error.html.twig');
-        echo $template->render(['message' => $ilsws->error]);
+        echo $twig->render('_error.html.twig', ['message' => $ilsws->error]);
     }
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
-        $template = $twig->load($template);
-        echo $template->render(['record' => $record, 'author_search' => $author_search, 'title_search' => $title_search, 'base_URL' => $config['base_URL']]);
+        echo $twig->render($template, [
+            'record' => $record, 
+            'author_search' => $author_search, 
+            'title_search' => $title_search, 
+            'base_URL' => $config['base_URL']
+            ]);
     }
 } 
 

@@ -5,7 +5,10 @@ $code = $_GET['code'];
 $name = $config['BRANCHES'][$code];
 
 // Render page template for each library
-$template = $twig->load('_library.html.twig');
-echo $template->render(['code' => $code, 'name' => $name, 'today' => $today]);
+echo $twig->render('_library.html.twig', [
+    'code' => $code, 
+    'name' => $name, 
+    'today' => $today
+    ]);
 
 ?>

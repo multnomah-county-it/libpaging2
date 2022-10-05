@@ -42,8 +42,7 @@ foreach ($indexes as $index_option) {
 $index_select .= "</select>\n";
 
 // Display the search form
-$template= $twig->load('_search.html.twig');
-echo $template->render([
+echo $twig->render('_search.html.twig', [
     'index_select' => $index_select, 
     'terms' => $terms, 
     'j_AND' => $j_AND, 
@@ -57,15 +56,13 @@ if ( $index && $terms && $field_list ) {
     try {
         $response = $ilsws->search_bib($token, $index, urlencode($terms), ['j' => $j, 'ct' => $ct, 'includeFields' => $field_list]);
     } catch (Exception $e) {
-        $template = $twig->load('_error.html.twig');
-        echo $template->render(['message' => $e->getMessage()]);
+        echo $twig->render('_error.html.twig', ['message' => $e->getMessage()]);
     } 
 
-    $template = $twig->load('_search_result.html.twig');
     if ( empty($ilsws->error) ) {
-        echo $template->render(['message' => count($response) . " records returned"]);
+        echo $twig->render('_search_result.html.twig', ['message' => count($response) . " records returned"]);
     } else {
-        echo $template->render(['message' => $ilsws->error]);
+        echo $twig->render('_search_result.html.twig', ['message' => $ilsws->error]);
     }
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
@@ -74,8 +71,7 @@ if ( $index && $terms && $field_list ) {
             $author_search = $ilsws->prepare_search($record['author']);
             $title_search = $ilsws->prepare_search($record['title']);
 
-            $template = $twig->load('_get_bib_fields.html.twig');
-            echo $template->render([
+            echo $twig->render('_get_bib_fields.html.twig', [
                 'record' => $record, 
                 'author_search' => urlencode($author_search), 
                 'title_search' => urlencode($title_search), 

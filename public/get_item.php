@@ -12,8 +12,7 @@ $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
 $token = $ilsws->connect();
 
 // Display the form
-$template= $twig->load('_get_item.html.twig');
-echo $template->render([
+echo $twig->render('_get_item.html.twig', [
     'item_key' => $item_key,
     'field_list' => $field_list
     ]);
@@ -23,21 +22,15 @@ if ( ! empty($item_key) && ! empty($field_list) ) {
     try {
         $record = $ilsws->get_item($token, $item_key, $field_list);
     } catch (Exception $e) {
-        $template = $twig->load('_error.html.twig');
-        echo $template->render(['message' => $e->getMessage()]);
+        echo $twig->render('_error.html.twig', ['message' => $e->getMessage()]);
     }
 
     if ( ! empty($ilsws->error) ) {
-        $template = $twig->load('_error.html.twig');
-        echo $template->render(['message' => $ilsws->error]);
+        echo $twig->render('_error.html.twig', ['message' => $ilsws->error]);
     }
 
-    $template = '_get_item_fields.html.twig';
-
-    if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
-
-        $template = $twig->load($template);
-        echo $template->render(['record' => $record]);
+    if ( $ilsws->code >= 200 && $ilsws->code < 400 ) {
+        echo $twig->render('_get_item_fields.html.twig', ['record' => $record]);
     }
 } 
 
