@@ -55,6 +55,10 @@ body {
     padding-top: 0.5em;
 }
 
+.right {
+    text-align: right !important;
+}
+
 hr {
     border: 1px solid #6ac074;
     display: block;

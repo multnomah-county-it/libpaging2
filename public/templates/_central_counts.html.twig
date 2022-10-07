@@ -1,21 +1,17 @@
 <div class="center-block">
     <p class="spacing">
         <table class="center-block">
-            <tr>
-                <th>NEW &amp; Unmatched</th>
-                <td>{{ attribute(list_counts, 'NEW & Unmatched') }}</td>
-            </tr>
             {% for key, count in list_counts %}
-            {% if key != 'Total' and key != 'NEW & Unmatched' %}
+            {% if key != 'Total' %}
             <tr>
                 <th>{{ key }}</th>
-                <td>{{ count }}</td>
+                <td class="right">{{ count }}</td>
             </tr>
             {% endif %}
             {% endfor %}
             <tr>
                 <th>Total</th>
-                <td>{{ list_counts.Total }}</td>
+                <td class="right bold">{{ list_counts.Total }}</td>
             </tr>
         </table>    
     </p>
