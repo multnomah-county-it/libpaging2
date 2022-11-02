@@ -10,10 +10,10 @@
 		}
 	],
 	"require": {
-		"php": "^7.0",
+		"php": "~7.0|~8.0",
 		"multnomah-county-it/libilsws": "^1",
 		"symfony/yaml": "*",
-		"twig/twig": "3.x-dev"
+		"twig/twig": "~3.0"
 	},
 	"authors": [
         	{
