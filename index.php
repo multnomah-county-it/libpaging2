@@ -20,10 +20,10 @@ $twig = new \Twig\Environment($loader, ['cache' => $config['template_path'] . '/
 
 // Variables for the header
 $today = date("Y-m-d");
-$config['public_path'] = '/public';
-$styles_path = $config['public_path'] . '/assets/css/styles.css';
-$favicon_path = $config['public_path'] . '/assets/favicon.ico';
-$logo_path = $config['public_path'] . '/assets/logo2016.png';
+$config['public_url'] = $config['base_URL'] . '/public';
+$styles_path = $config['public_url'] . '/assets/css/styles.css';
+$favicon_path = $config['public_url'] . '/assets/favicon.ico';
+$logo_path = $config['public_url'] . '/assets/logo2016.png';
 $logo_link_path = $config['logo_link_path'];
 $page_title = 'Multnomah County Library Paging Lists';
 
@@ -55,6 +55,7 @@ if ( in_array($_GET['page'], ['list','library']) ) {
 
 // Display the header
 echo $twig->render('_header.html.twig', [
+    'base_URL' => $config['base_URL'],
     'today' => $today, 
     'styles_path' => $styles_path, 
     'favicon_path' => $favicon_path, 

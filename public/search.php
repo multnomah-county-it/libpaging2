@@ -43,6 +43,7 @@ $index_select .= "</select>\n";
 
 // Display the search form
 echo $twig->render('_search.html.twig', [
+    'base_URL' => $config['base_URL'],
     'index_select' => $index_select, 
     'terms' => $terms, 
     'j_AND' => $j_AND, 
@@ -72,11 +73,10 @@ if ( $index && $terms && $field_list ) {
             $title_search = $ilsws->prepare_search($record['title']);
 
             echo $twig->render('_get_bib_fields.html.twig', [
+                'base_URL' => $config['base_URL'],
                 'record' => $record, 
                 'author_search' => urlencode($author_search), 
-                'title_search' => urlencode($title_search), 
-                'base_URL' => 
-                $config['base_URL']
+                'title_search' => urlencode($title_search)
                 ]);
         }
     }

@@ -13,6 +13,7 @@ $token = $ilsws->connect();
 
 // Display the form
 echo $twig->render('_get_bib.html.twig', [
+    'base_URL' => $config['base_URL'],
     'bib_key' => $bib_key,
     'field_list' => $field_list
     ]);
@@ -47,10 +48,10 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
         echo $twig->render($template, [
+            'base_URL' => $config['base_URL'],
             'record' => $record, 
             'author_search' => $author_search, 
-            'title_search' => $title_search, 
-            'base_URL' => $config['base_URL']
+            'title_search' => $title_search 
             ]);
     }
 } 
