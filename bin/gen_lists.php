@@ -1,7 +1,7 @@
 <?php
 
 // Set the current directory so we can run this from a cron job more easily
-$install_path = '/var/www/html-dev';
+$install_path = '/var/www/html/paging-dev';
 chdir($install_path);
 
 require_once 'vendor/autoload.php';
