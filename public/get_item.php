@@ -13,6 +13,7 @@ $token = $ilsws->connect();
 
 // Display the form
 echo $twig->render('_get_item.html.twig', [
+    'base_URL' => $config['base_URL'],
     'item_key' => $item_key,
     'field_list' => $field_list
     ]);

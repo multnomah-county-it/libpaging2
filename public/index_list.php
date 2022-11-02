@@ -64,6 +64,7 @@ if ( isset($_GET['update']) && $_GET['update'] ) {
 
 // Loop through brance codes and generate links
 echo $twig->render('_index_list.html.twig', [
+    'base_URL' => $config['base_URL'],
     'branches' => $config['BRANCHES'], 
     'today' => $today, 
     'update' => $update

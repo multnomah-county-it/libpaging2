@@ -1,7 +1,7 @@
 <h1 class="center-text">Multnomah County Library Paging Lists for {{ today }}</h1>
 <p class="list list-narrow">
 {% for code, name in branches %}
-    <a href="/index.php?page=library&code={{ code }}">{{ name }}</a><br>
+    <a href="{{ base_URL }}/index.php?page=library&code={{ code }}">{{ name }}</a><br>
 {% endfor %}
 </p>
 <div class="center-text">

@@ -1,5 +1,5 @@
-base_path: /var/www/html-dev
-base_URL: http://paging.multcolib.org:8080
+base_path: /var/www/html
+base_URL: http://paging.multcolib.org
 logo_link_path: https://multcolib.org
 log_path: /var/log/paging
 BRANCHES:

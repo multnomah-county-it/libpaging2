@@ -16,7 +16,7 @@
                 alt="Multnomah County Library Logo"></a>
             <div class="header-right center-flex">
                 {% for menu_item in menu_items %}
-                    &nbsp;&nbsp;<a class="{{ menu_item.class }}" href="{{ menu_item.link }}">{{ menu_item.name }}</a>
+                    &nbsp;&nbsp;<a class="{{ menu_item.class }}" href="{{ base_URL }}{{ menu_item.link }}">{{ menu_item.name }}</a>
                 {% endfor %}
             </div>
         </div>
