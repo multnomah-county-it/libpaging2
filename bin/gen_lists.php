@@ -112,7 +112,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
                 $entry['author_search'] = urlencode($ilsws->prepare_search($entry['author']));
                 $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
 
-                $body .= $twig->render('_list.html.twig');
+                $body .= $twig->render('_list.html.twig', $entry);
             }
 
             $body .= $twig->render('_list_end.html.twig', []);
