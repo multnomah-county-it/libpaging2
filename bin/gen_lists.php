@@ -1,8 +1,7 @@
 <?php
 
 // Set the current directory so we can run this from a cron job more easily
-$install_path = '/var/www/html/paging-dev';
-chdir($install_path);
+chdir($argv[1]);
 
 require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
