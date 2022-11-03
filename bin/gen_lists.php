@@ -1,7 +1,8 @@
 <?php
 
 // Set the current directory so we can run this from a cron job more easily
-chdir($argv[1]);
+$install_path = $argv[1];
+chdir($install_path);
 
 require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
