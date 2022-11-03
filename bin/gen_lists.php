@@ -103,27 +103,20 @@ foreach ($config['BRANCHES'] as $code => $name) {
 
             $entries = file($data_file);
 
-            $template = $twig->load('_gen_lists_header.html.twig');
-            $body = $template->render();
-
-            $template = $twig->load('_list_start.html.twig');
-            $body .= $template->render(['type' => $type, 'name' => $name, 'today' => $today]);
+            $body = $twig->render('_gen_lists_header.html.twig', ['base_URL' => $config['base_URL']]);
+            $body .= $twig->render('_list_start.html.twig', ['base_URL' => $config['base_URL'], 'type' => $type, 'name' => $name, 'today' => $today]);
 
             foreach ($entries as $line) {
                 $entry = json_decode($line, true);
+                $entry['base_URL'] = $config['base_URL'];
                 $entry['author_search'] = urlencode($ilsws->prepare_search($entry['author']));
                 $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
-                $entry['base_URL'] = $config['base_URL'];
 
-                $template = $twig->load('_list.html.twig');
-                $body .= $template->render($entry);
+                $body .= $twig->render('_list.html.twig');
             }
 
-            $template = $twig->load('_list_end.html.twig');
-            $body .= $template->render();
-
-            $template = $twig->load('_gen_lists_footer.html.twig');
-            $body .= $template->render();
+            $body .= $twig->render('_list_end.html.twig', []);
+            $body .= $twig->render('_gen_lists_footer.html.twig', []);
 
             $f_mail = fopen("$install_path/bin/email_temp.html", "w") or die("Could not open email temporary file");
             fwrite($f_mail, $body) or die("Could not write to email temporary file");
