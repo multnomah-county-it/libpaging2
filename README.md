@@ -17,7 +17,7 @@ utilizes to communicate with the SirsiDynix system.
 # Requirements
 
 This application requires php 7 or 8, and 
-<a href="https://github.com/multnomah-county-it/libilsws">LibILSWS</a>, which is available on 
+<a href="https://github.com/multnomah-county-it/libilsws">Libilsws</a>, which is available on 
 GitHub. Both the application and code library utilize <a href="https://getcomposer.org/">composer</a> 
 to manage package dependencies.
 
