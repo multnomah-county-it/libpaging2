@@ -2,16 +2,24 @@
 
 # Purpose
 
-This application generates a set of paging lists for Multnomah County Library (MCL) branches. While
-it is configured for MCL, it could easily be configured for any other library utilizing the SirsiDynix
-Symphony integrated library system.
+This application generates and displays a set of paging lists for 
+<a href="https://multcolib.org">Multnomah County Library</a> (MCL) branches. While the application 
+is configured to meet MCL's needs, it could easily be configured for any other library utilizing 
+the SirsiDynix Symphony integrated library system.
 
 The application has three primary purposes: 
 1. To provide simple, clear, paging lists for MCL branches, which are accessible via either web or email.
 2. To support breakdown of the Central Library's list into multiple lists, based on shelving location.
-3. To demonstrate the capabilities of the <a href="https://github.com/multnomah-county-it/libilsws" 
-alt="LibILSWS GitHub Repository">LibILSWS</a> code library, which the application utilizes to communicate 
-with the SirsiDynix system.
+3. To demonstrate the capabilities of the open source 
+<a href="https://github.com/multnomah-county-it/libilsws">Libilsws</a> code library, which the application 
+utilizes to communicate with the SirsiDynix system.
+
+# Requirements
+
+This application requires php 7 or 8, and 
+<a href="https://github.com/multnomah-county-it/libilsws">LibILSWS</a>, which is available on 
+GitHub. Both the application and code library utilize <a href="https://getcomposer.org/">composer</a> 
+to manage package dependencies.
 
 # Features
 
@@ -21,9 +29,9 @@ that staff may conveniently and quickly look up additional information about lis
 
 The Central page provides Central Library staff the option of organizing their paging items into 
 multiple, separate lists, based on shelving location. This is helpful, given the large size and 
-multi-floor design of the bulding. The Central page is configured via a YAML file that filters items 
-into groups based on Symphony's current location and call number. Regular expressions are used to define 
-the call number filters.
+multi-floor design of the building. The Central page is configured via a YAML file that filters list 
+items into groups based on Symphony's current location and call number. Regular expressions are used 
+to define the call number filters.
 
 Because retrieving the paging list data from Symphony is a fairly slow process--it takes about 20 
 seconds on Multnomah County Library's system--the application comes with a list generation utility, 
