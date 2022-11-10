@@ -35,7 +35,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
     $title_holds = [];
     $item_holds = [];
     foreach ($list as $hold) {
-        if ( ! empty($hold['currentLocation']) ) {
+        if ( ! empty($hold['currentLocation']) && $hold['currentLocation'] != 'HOLDS' ) {
             // Increment the count for this branch
             $stats[$today][$code]++;
             if ( $hold['holdType'] == 'TITLE' ) {

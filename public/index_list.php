@@ -17,7 +17,7 @@ if ( isset($_GET['update']) && $_GET['update'] ) {
         $title_holds = [];
         $item_holds = [];
         foreach ($list as $hold) {
-            if ( ! empty($hold['currentLocation']) ) {
+	    if ( ! empty($hold['currentLocation']) && $hold['currentLocation'] != 'HOLDS' ) {
                 if ( $hold['holdType'] == 'TITLE' ) {
                     array_push($title_holds, $hold);
                 } else {
