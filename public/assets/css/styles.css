@@ -12,7 +12,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 95%;
 }
 
 .center-flex {
@@ -27,7 +27,7 @@ body {
 }
 
 .list-wide {
-    width: 90%;
+    width: 95%;
 }
 
 .list-narrow {
@@ -57,6 +57,10 @@ body {
 
 .right {
     text-align: right !important;
+}
+
+.nowrap {
+    white-space: nowrap !important;
 }
 
 hr {
@@ -132,17 +136,17 @@ table {
 }
 
 th {
-	padding: .25em;
+    padding: .25em;
     font-size: 70%;
-	text-align: left;
+    text-align: left;
     vertical-align: bottom;
     white-space: nowrap;
 }
 
 td {
-	padding: .25em;
+    padding: .25em;
     font-size: 70%;
-	text-align: left;
+    text-align: left;
     vertical-align: bottom;
 }
 

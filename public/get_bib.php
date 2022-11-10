@@ -37,8 +37,8 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
             echo $twig->render('_error.html.twig', ['message' => $e->getMessage()]);
         } 
         $template = '_get_bib_fields.html.twig';
-        $author_search = preg_replace("/[\[\],;:'?]/", '', $record['author']);
-        $title_search = preg_replace("/[\[\],;:'?]/", '', $record['title']);
+        $author_search = urlencode($ilsws->prepare_search($record['author']));
+        $title_search = urlencode($ilsws->prepare_search($record['title']));
     }
 
     if ( ! empty($ilsws->error) ) {

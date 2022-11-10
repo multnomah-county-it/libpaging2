@@ -280,68 +280,75 @@ categories:
     name: 'CD Xmas'
     not: ''
     regex: '#^CD\sXmas #'
-  deweyRange_10_390499:
+  deweyRange_10_010299:
+    flags: A-N
+    name: 010-299
+    not: ''
+    regex:
+      - 010
+      - 299
+  deweyRange_11_390499:
     flags: A-N
     name: 390-499
     not: ''
     regex:
       - 390
       - 499
-  deweyRange_11_400_Media:
+  deweyRange_12_400_Media:
     flags: A-M-A
     name: '400 Media'
     not: ''
     regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?)4\d{2}#'
-  deweyRange_12_700711:
+  deweyRange_13_700711:
     flags: A-N
     name: 700-711
     not: ''
     regex:
       - 700
       - 711
-  deweyRange_13_720758:
+  deweyRange_14_720758:
     flags: A-N
     name: 720-758
     not: ''
     regex:
       - 718
       - 758
-  deweyRange_14_010299_OVERSIZE:
+  deweyRange_15_010299_OVERSIZE:
     flags: A-N-O
     name: '010-299 OVERSIZE'
     not: ''
     regex:
       - 10
       - 299
-  deweyRange_15_390499_OVERSIZE:
+  deweyRange_16_390499_OVERSIZE:
     flags: A-N-O
     name: '390-499 OVERSIZE'
     not: ''
     regex:
       - 390
       - 499
-  deweyRange_16_700711_OVERSIZE:
+  deweyRange_17_700711_OVERSIZE:
     flags: A-N-O
     name: '700-711 OVERSIZE'
     not: ''
     regex:
       - 700
       - 711
-  deweyRange_17_718789_OVERSIZE:
+  deweyRange_18_718789_OVERSIZE:
     flags: A-N-O
     name: '718-789 OVERSIZE'
     not: ''
     regex:
       - 718
       - 789
-  deweyRange_18_759899:
+  deweyRange_19_759899:
     flags: A-N
     name: 759-899
     not: ''
     regex:
       - 759
       - 899
-  deweyRange_19_790999_OVERSIZE:
+  deweyRange_20_790999_OVERSIZE:
     flags: A-N-O
     name: '790-999 OVERSIZE'
     not: '' 
@@ -355,7 +362,7 @@ categories:
     regex:
       - 1
       - 9
-  deweyRange_20_900999:
+  deweyRange_21_900999:
     flags: A-N
     name: 900-999
     not: ''
@@ -397,27 +404,27 @@ categories:
     regex:
       - 300
       - 389
-  deweyRange_7_500699:
+  deweyRange_7_500599:
     flags: A-N
-    name: 500-699
+    name: 500-599
     not: '#Beginning Facts#'
     regex:
       - 500
+      - 599
+  deweyRange_8_600699:
+    flags: A-N
+    name: 600-699
+    not: '#Beginning Facts#'
+    regex:
+      - 600
       - 699
-  deweyRange_8_712717:
+  deweyRange_9_712717:
     flags: A-N
     name: 712-717
-    not: '#Beginning Facts#'
+    not: ''
     regex:
       - 712
       - 717
-  deweyRange_9_010299:
-    flags: A-N
-    name: 010-299
-    not: ''
-    regex:
-      - 10
-      - 299
   dvd000999:
     flags: A-M-D
     name: 'DVD 000 - 999'
@@ -708,19 +715,12 @@ categories:
     name: 'Short Stories'
     not: ''
     regex: '#^SS#'
-  stx001822:
+  stx001999:
     flags: 003-CEN
-    name: 'STX 001-822'
+    name: 'STX 001-999'
     not: ''
     regex:
       - 1
-      - 822
-  stx823999:
-    flags: 003-CEN
-    name: 'STX 823-999'
-    not: ''
-    regex:
-      - 823
       - 999
   toddler:
     flags: J-E-T
@@ -739,6 +739,11 @@ categories:
     name: Western
     not: ''
     regex: '#^WESTERN#'
+  worldLanguageDvd:
+    flags: A-W-M
+    name: 'World Language DVDs'
+    not: ''
+    regex: '#^DVD (ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
   worldLanguageFiction:
     flags: A-W-F
     name: 'World Language Fiction'
@@ -801,10 +806,99 @@ lists:
       - newAdultNonfiction
       - killawatt
       - unmatched
-    defaultListNumber: 1
-    name: 'NEW & Unmatched'
-  cds:
+    name: 'New & Unmatched'
+  cl:
     categories:
+      - newJ
+      - bluJ
+      - dvdJ
+      - dvdJNonfiction
+      - je
+      - binBooksJbb
+      - binBooksConcept
+      - binBooksToddler
+      - preschoolCurriculumBag
+      - itu2019sInTheBag
+      - toddler
+      - musicCds
+      - audiobooksJ
+      - beginningFacts
+      - reader
+      - parenting
+      - jWorldLanguageFiction
+      - jWorldLanguageNonfiction
+      - jWorldLanguageMedia
+      - jWorldLanguageBb
+      - infoBasica
+      - j
+      - jNonfiction
+      - jBiography
+      - jHoliday
+      - jgnf
+      - jgnnf
+      - jLargePrintFiction
+    name: CL
+  hum1:
+    categories:
+      - musicScores
+      - easyPianoScores
+      - multiHandScores
+      - miniatureScores
+      - scoresInParts
+      - sheetMusicOversize
+      - deweyRange_10_010299
+      - deweyRange_11_390499
+      - deweyRange_12_400_Media
+      - deweyRange_13_700711
+      - deweyRange_14_720758
+    name: HUM One
+  hum2:
+    categories:
+      - deweyRange_15_010299_OVERSIZE
+      - deweyRange_16_390499_OVERSIZE
+      - deweyRange_17_700711_OVERSIZE
+      - deweyRange_18_718789_OVERSIZE
+      - gn
+      - gnNonfiction
+      - sf
+      - deweyRange_19_759899
+    name: HUM Two
+  hum3:
+    categories:
+      - map
+      - mapRoom
+      - mapRoomAtlas
+      - mapRoomOversize
+      - worldLanguageFiction
+      - worldLanguageNonfiction
+      - yWorldLanguage
+      - yWorldLanguageNonfiction
+      - deweyRange_20_790999_OVERSIZE
+      - biographyOversize
+      - deweyRange_21_900999
+      - biography
+    name: HUM Three
+  media:
+    categories:
+      - cdFiction
+      - cdMystery
+      - cdScifi
+      - cdWestern
+      - cd001399500999
+      - cdB
+      - bluRayDvds
+      - dvdDrama
+      - dvdComedy
+      - dvdAction
+      - dvdHorror
+      - dvdMusicals
+      - dvdScifi
+      - dvdWestern
+      - dvdForeign
+      - worldLanguageDvd
+      - worldLanguageMedia
+      - dvd000999
+      - dvdrom
       - cdBlues
       - cdChamber
       - cdChinese
@@ -844,122 +938,30 @@ lists:
       - cdWorldPacific
       - cdWorldSouthAmerica
       - cdXmas
-    defaultListNumber: 1
-    name: 'Music CDs'
-  cl:
-    categories:
-      - newJ
-      - bluJ
-      - dvdJ
-      - dvdJNonfiction
-      - je
-      - binBooksJbb
-      - binBooksConcept
-      - binBooksToddler
-      - preschoolCurriculumBag
-      - itu2019sInTheBag
-      - toddler
-      - musicCds
-      - audiobooksJ
-      - beginningFacts
-      - reader
-      - parenting
-      - jWorldLanguageFiction
-      - jWorldLanguageNonfiction
-      - jWorldLanguageMedia
-      - jWorldLanguageBb
-      - infoBasica
-      - j
-      - jNonfiction
-      - jBiography
-      - jHoliday
-      - jgnf
-      - jgnnf
-      - jLargePrintFiction
-    defaultListNumber: 1
-    name: CL
-  dvds:
-    categories:
-      - cdFiction
-      - cdMystery
-      - cdScifi
-      - cdWestern
-      - cd001399500999
-      - cdB
-      - bluRayDvds
-      - dvdDrama
-      - dvdComedy
-      - dvdAction
-      - dvdHorror
-      - dvdMusicals
-      - dvdScifi
-      - dvdWestern
-      - dvdForeign
-      # - worldLanguageDvd
-      - worldLanguageMedia
-      - dvd000999
-      - dvdrom
-    defaultListNumber: 1
-    name: 'DVDs & Audiobooks'
-  hum:
-    categories:
-      - musicScores
-      - easyPianoScores
-      - multiHandScores
-      - miniatureScores
-      - scoresInParts
-      - sheetMusicOversize
-      - deweyRange_9_010299
-      - deweyRange_10_390499
-      - deweyRange_11_400_Media
-      - deweyRange_12_700711
-      - deweyRange_13_720758
-      - deweyRange_14_010299_OVERSIZE
-      - deweyRange_15_390499_OVERSIZE
-      - deweyRange_16_700711_OVERSIZE
-      - deweyRange_17_718789_OVERSIZE
-      - gn
-      - sf
-      - gnNonfiction
-      - deweyRange_18_759899
-      - map
-      - mapRoom
-      - mapRoomAtlas
-      - mapRoomOversize
-      - worldLanguageFiction
-      - worldLanguageNonfiction
-      - yWorldLanguage
-      - yWorldLanguageNonfiction
-      - deweyRange_19_790999_OVERSIZE
-      - biographyOversize
-      - deweyRange_20_900999
-      - biography
-    defaultListNumber: 3
-    name: HUM
+    name: 'Media'
   pl:
     categories:
-      - lgetypeFiction
+      - ygn
+      - ygnNonFiction
+      - audiobooksFictionY
+      - audiobooksNonfictionOnlyY
+      - y
       - lgetypeY
+      - yNonfiction
+      - yBiography
+      - lgetypeFiction
       - lgetypeMystery
       - lgetypeScifi
       - lgetypeWestern
       - lgetypeNonfiction
       - lgetypeBiography
       - mystery
-      - audiobooksFictionY
-      - audiobooksNonfictionOnlyY
-      - yNonfiction
-      - yBiography
-      - y
-      - ygn
-      - ygnNonFiction
       - shortStories
       - fiction
       - western
       - urban
-    defaultListNumber: 1
     name: PL
-  sb:
+  sb1:
     categories:
       - zine
       - deweyRange_1_001009_OVERSIZE
@@ -968,14 +970,15 @@ lists:
       - deweyRange_4_712717_OVERSIZE
       - deweyRange_5_001009
       - deweyRange_6_300389
-      - deweyRange_7_500699
-      - deweyRange_8_712717
-    defaultListNumber: 2
-    name: S&B
+      - deweyRange_7_500599
+    name: S&B One
+  sb2:
+    categories:
+      - pageturners
+      - deweyRange_8_600699
+      - deweyRange_9_712717
+    name: S&B Two
   stx:
     categories:
-      - stx001822
-      - pageturners
-      - stx823999
-    defaultListNumber: 1
+      - stx001999
     name: STX

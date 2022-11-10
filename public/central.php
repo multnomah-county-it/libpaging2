@@ -113,7 +113,7 @@ if ( filesize($data_file) > 2 ) {
                     $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
                     $entry['base_URL'] = $config['base_URL'];
 
-                    echo $twig->render('_list.html.twig', $entry);
+                    echo $twig->render('_central_list.html.twig', $entry);
                 }
             }
         }

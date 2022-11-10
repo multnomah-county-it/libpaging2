@@ -17,7 +17,7 @@ if ( isset($_GET['update']) && $_GET['update'] ) {
         $title_holds = [];
         $item_holds = [];
         foreach ($list as $hold) {
-            if ( ! empty($hold['currentLocation']) ) {
+	    if ( ! empty($hold['currentLocation']) && $hold['currentLocation'] != 'HOLDS' ) {
                 if ( $hold['holdType'] == 'TITLE' ) {
                     array_push($title_holds, $hold);
                 } else {
@@ -49,7 +49,7 @@ if ( isset($_GET['update']) && $_GET['update'] ) {
         for ($i = 0; $i < count($title_holds); $i++) {
             fwrite($f_title, json_encode($title_holds[$i]) . "\n");
         }
-        fclose($f_title);
+	fclose($f_title);
 
         $f_item = fopen($item_file, "w") or die("Could not open file: $item_file");
         for ($i = 0; $i < count($item_holds); $i++) {

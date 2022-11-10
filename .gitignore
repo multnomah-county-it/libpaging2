@@ -1,5 +1,6 @@
 /vendor/
 /config/*
+/data/*.json
 /public/templates/cache/*
 composer.phar
 /bin/email_temp.html
