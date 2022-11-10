@@ -72,6 +72,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
     fclose($f_title);
     chown($title_file, 'paging');
     chgrp($title_file, 'www-data');
+    chmod($title_file, 0660);
 
     $f_item = fopen($item_file, "w") or die("Could not open file: $item_file");
     for ($i = 0; $i < count($item_holds); $i++) {
@@ -80,6 +81,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
     fclose($f_item);
     chown($item_file, 'paging');
     chgrp($item_file, 'www-data');
+    chmod($item_file, 0660);
 
     // Initialize the Twig environment
     $loader = new \Twig\Loader\FilesystemLoader($config['template_path']);
