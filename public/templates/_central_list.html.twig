@@ -1,0 +1,7 @@
+    <tr>
+        <td>{{ currentLocation }}</td>
+        <td class="nowrap">{{ callNumber }}</td>
+        <td><a href="{{ base_URL }}/index.php?page=search&index=AUTHOR&terms={{ author_search }}">{{ author }}</a></td>
+        <td><a href="{{ base_URL }}/index.php?page=search&index=TITLE&terms={{ title_search }}">{{ title }}</a></td>
+        <td><a href="{{ base_URL }}/index.php?page=get_item&item_key={{ item }}">{{ barcode }}</a></td>
+    </tr>
