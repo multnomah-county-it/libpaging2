@@ -99,8 +99,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
         if ( filesize($data_file) > 2 ) {
 
             // Send email
-            // $to = $config['BRANCH_EMAILS'][$code];
-            $to = 'john.houser@multco.us';
+            $to = $config['BRANCH_EMAILS'][$code];
             $from = $config['EMAIL_FROM'];
             $subject = "$type Paging List for $name for $today";
 
