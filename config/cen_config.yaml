@@ -1,4 +1,3 @@
----
 categories:
   audiobooksFictionY:
     flags: Y-M-A
@@ -60,6 +59,11 @@ categories:
     name: 'CD 001-399 & 500-999'
     not: ''
     regex: '#^CD [0-35-9]\d{2}#'
+  cd400499:
+    flags: A-M-A
+    name: 'CD 400-499'
+    not: ''
+    regex: '#^CD [4]\d{2}#'  
   cdB:
     flags: A-M-A
     name: 'CD- B-'
@@ -283,14 +287,14 @@ categories:
   deweyRange_10_010299:
     flags: A-N
     name: 010-299
-    not: ''
+    not: '#OVERSIZE#'
     regex:
-      - 010
+      - 10
       - 299
   deweyRange_11_390499:
     flags: A-N
     name: 390-499
-    not: ''
+    not: '#OVERSIZE#'
     regex:
       - 390
       - 499
@@ -298,7 +302,7 @@ categories:
     flags: A-M-A
     name: '400 Media'
     not: ''
-    regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?)4\d{2}#'
+    regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?4\d{2}#'
   deweyRange_13_700711:
     flags: A-N
     name: 700-711
@@ -306,10 +310,10 @@ categories:
     regex:
       - 700
       - 711
-  deweyRange_14_720758:
+  deweyRange_14_718758:
     flags: A-N
-    name: 720-758
-    not: ''
+    name: 718-758
+    not: '#OVERSIZE#'
     regex:
       - 718
       - 758
@@ -344,14 +348,14 @@ categories:
   deweyRange_19_759899:
     flags: A-N
     name: 759-899
-    not: ''
+    not: '#OVERZIZE#'
     regex:
       - 759
       - 899
   deweyRange_20_790999_OVERSIZE:
     flags: A-N-O
     name: '790-999 OVERSIZE'
-    not: '' 
+    not: ''
     regex:
       - 790
       - 999
@@ -365,7 +369,7 @@ categories:
   deweyRange_21_900999:
     flags: A-N
     name: 900-999
-    not: ''
+    not: '#OVERSIZE#'
     regex:
       - 900
       - 999
@@ -425,36 +429,61 @@ categories:
     regex:
       - 712
       - 717
-  dvd000999:
+  dvd000399500999:
     flags: A-M-D
-    name: 'DVD 000 - 999'
+    name: 'DVD 000-399 500-999'
     not: ''
-    regex: '#DVD\s((RUSSIAN|CHINESE|VIET|SPANISH)\s)?[0-35-9]\d{2}#'
+    regex: '#DVD\s((CHINESE|RUSSIAN|SPANISH|VIET)\s)?[0-35-9]\d{2}#'
   dvdAction:
     flags: A-M-D
     name: 'DVD Action'
     not: ''
     regex: '#DVD\sAction#'
+  dvdACTION:
+    flags: A-M-D
+    name: 'DVD Action'
+    not: ''
+    regex: '#DVD\sACTION#'
   dvdComedy:
     flags: A-M-D
     name: 'DVD Comedy'
     not: ''
     regex: '#DVD\sComedy#'
+  dvdCOMEDY:
+    flags: A-M-D
+    name: 'DVD Comedy'
+    not: ''
+    regex: '#DVD\sCOMEDY#'
   dvdDrama:
     flags: A-M-D
     name: 'DVD Drama'
     not: ''
     regex: '#DVD\sDrama#'
+  dvdDRAMA:
+    flags: A-M-D
+    name: 'DVD Drama'
+    not: ''
+    regex: '#DVD\sDRAMA#'
   dvdForeign:
     flags: A-M-D
     name: 'DVD Foreign'
     not: ''
     regex: '#DVD\sForeign#'
+  dvdFOREIGN:
+    flags: A-M-D
+    name: 'DVD Foreign'
+    not: ''
+    regex: '#DVD\sFOREIGN#'
   dvdHorror:
     flags: A-M-D
     name: 'DVD Horror'
     not: ''
     regex: '#DVD\sHorror#'
+  dvdHORROR:
+    flags: A-M-D
+    name: 'DVD Horror'
+    not: ''
+    regex: '#DVD\sHORROR#'
   dvdJ:
     flags: J-M-D
     name: 'DVD j'
@@ -470,16 +499,31 @@ categories:
     name: 'DVD Musicals'
     not: ''
     regex: '#DVD\sMusicals#'
+  dvdMUSICALS:
+    flags: A-M-D
+    name: 'DVD Musicals'
+    not: ''
+    regex: '#DVD\sMUSICALS#'
   dvdScifi:
     flags: A-M-D
     name: 'DVD SciFi'
     not: ''
     regex: '#DVD\sSciFi#'
+  dvdSCIFI:
+    flags: A-M-D
+    name: 'DVD SciFi'
+    not: ''
+    regex: '#DVD\sSCIFI#'
   dvdWestern:
     flags: A-M-D
     name: 'DVD Western'
     not: ''
     regex: '#DVD\sWestern#'
+  dvdWESTERN:
+    flags: A-M-D
+    name: 'DVD Western'
+    not: ''
+    regex: '#DVD\sWESTERN#'
   dvdrom:
     flags: A-M-D
     name: DVDROM
@@ -545,21 +589,111 @@ categories:
     name: 'World Languages Board Book'
     not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  jArabicLanguageFiction:
+    flags: J-W-F
+    name: 'Arabic fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(ARABIC)#'
+  jChineseLanguageFiction:
+    flags: J-W-F
+    name: 'Chinese fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(CHINESE)#'
   jWorldLanguageFiction:
     flags: J-W-F
     name: 'World Languages fiction for kids'
     not: '#(Inf)(\.) (Basi)#'
-    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+    regex: '#(CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|SERBOCRO|SOMALI|SWEDISH|TAGALOG|THAI)#'
+  jFrenchLanguageFiction:
+    flags: J-W-F
+    name: 'French fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(FRENCH)#'
+  jGermanLanguageFiction:
+    flags: J-W-F
+    name: 'German fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(GERMAN)#'
+  jJapaneseLanguageFiction:
+    flags: J-W-F
+    name: 'World Languages fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(JAPANESE)#'
+  jRussianLanguageFiction:
+    flags: J-W-F
+    name: 'Russian fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(RUSSIAN)#'
+  jSpanishLanguageFiction:
+    flags: J-W-F
+    name: 'Spanish fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(SPANISH)#'
+  jUkranianLanguageFiction:
+    flags: J-W-F
+    name: 'Ukranian fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(UKRAINIAN)#'
+  jVietLanguageFiction:
+    flags: J-W-F
+    name: 'Vietnamese fiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(VIET)#'
   jWorldLanguageMedia:
     flags: J-W-M
-    name: 'World Languages media for kids'
+    name: 'World Langruage media for kids'
     not: '#(Inf)(\.) (Basi)#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  jArabicLanguageNonfiction:
+    flags: J-W-N
+    name: 'Arabic nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(ARABIC)#'
+  jChineseLanguageNonfiction:
+    flags: J-W-N
+    name: 'Chinese nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(CHINESE)#'
   jWorldLanguageNonfiction:
     flags: J-W-N
     name: 'World Languages nonfiction for kids'
     not: '#(Inf)(\.) (Basi)#'
-    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+    regex: '#(CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|SERBOCRO|SOMALI|SWEDISH|TAGALOG|THAI)#'
+  jFrenchLanguageNonfiction:
+    flags: J-W-N
+    name: 'French nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(FRENCH)#'
+  jGermanLanguageNonfiction:
+    flags: J-W-N
+    name: 'German nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(GERMAN)#'
+  jJapaneseLanguageNonfiction:
+    flags: J-W-N
+    name: 'World Languages nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(JAPANESE)#'
+  jRussianLanguageNonfiction:
+    flags: J-W-N
+    name: 'Russian nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(RUSSIAN)#'
+  jSpanishLanguageNonfiction:
+    flags: J-W-N
+    name: 'Spanish nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(SPANISH)#'
+  jUkranianLanguageNonfiction:
+    flags: J-W-N
+    name: 'Ukranian nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(UKRAINIAN)#'
+  jVietLanguageNonfiction:
+    flags: J-W-N
+    name: 'Vietnamese nonfiction for kids'
+    not: '#(Inf)(\.) (Basi)#'
+    regex: '#(VIET)#'
   je:
     flags: J-E-E
     name: JE
@@ -580,6 +714,11 @@ categories:
     name: Killawatt
     not: ''
     regex: '#KILLAWATT#'
+  Lector:
+    flags: J-W-F
+    name: 'Lector'
+    not: ''
+    regex: '#(Amarillo|Azul|Rojo|Verde)\sLector#'
   lgetypeBiography:
     flags: A-P
     name: 'LGE-TYPE Biography'
@@ -694,7 +833,7 @@ categories:
     flags: J-E-R
     name: Reader
     not: ''
-    regex: '#(Blue|Red|Green|Yellow)\sReader#'
+    regex: '#(Yellow|Blue|Red|Green)\sReader#'
   scoresInParts:
     flags: A-S-P
     name: 'Music scores in parts'
@@ -715,12 +854,19 @@ categories:
     name: 'Short Stories'
     not: ''
     regex: '#^SS#'
-  stx001999:
+  stx001739:
     flags: 003-CEN
-    name: 'STX 001-999'
+    name: 'STX B 001-739'
     not: ''
     regex:
       - 1
+      - 739
+  stx740999:
+    flags: 003-CEN
+    name: 'STX SB 740-999'
+    not: ''
+    regex:
+      - 740
       - 999
   toddler:
     flags: J-E-T
@@ -744,21 +890,111 @@ categories:
     name: 'World Language DVDs'
     not: ''
     regex: '#^DVD (ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  arabicLanguageFiction:
+    flags: A-W-F
+    name: 'Arabic Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(ARABIC)#'
+  chineseLanguageFiction:
+    flags: A-W-F
+    name: 'Chinese Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(CHINESE)#'
   worldLanguageFiction:
     flags: A-W-F
     name: 'World Language Fiction'
     not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
-    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+    regex: '#(CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|SERBOCRO|SOMALI|SWEDISH|TAGALOG|THAI)#'
+  frenchLanguageFiction:
+    flags: A-W-F
+    name: 'French Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(FRENCHT)#'
+  germanLanguageFiction:
+    flags: A-W-F
+    name: 'German Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(GERMAN)#'
+  japaneseLanguageFiction:
+    flags: A-W-F
+    name: 'Japanese Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(JAPANESE)#'
+  russianLanguageFiction:
+    flags: A-W-F
+    name: 'Russian Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(RUSSIAN)#'
+  spanishLanguageFiction:
+    flags: A-W-F
+    name: 'Spanish Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(SPANISH)#'
+  ukranianLanguageFiction:
+    flags: A-W-F
+    name: 'Ukranian Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(UKRAINIAN)#'
+  vietLanguageFiction:
+    flags: A-W-F
+    name: 'Vietnamese Fiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(VIET)#'
   worldLanguageMedia:
     flags: A-W-M
     name: 'World Language Media'
     not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+  arabicLanguageNonfiction:
+    flags: A-W-N
+    name: 'Arabic Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(ARABIC)#'
+  chineseLanguageNonfiction:
+    flags: A-W-N
+    name: 'Chinese Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(CHINESE)#'
   worldLanguageNonfiction:
     flags: A-W-N
     name: 'World Language Nonfiction'
     not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
-    regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)#'
+    regex: '#(CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|SERBOCRO|SOMALI|SWEDISH|TAGALOG|THAI)#'
+  frenchLanguageNonfiction:
+    flags: A-W-N
+    name: 'French Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(FRENCH)#'
+  germanLanguageNonfiction:
+    flags: A-W-N
+    name: 'German Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(GERMAN)#'
+  japaneseLanguageNonfiction:
+    flags: A-W-N
+    name: 'Japanese Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(JAPANESE)#'
+  russianLanguageNonfiction:
+    flags: A-W-N
+    name: 'Russian Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(RUSSIAN)#'
+  spanishLanguageNonfiction:
+    flags: A-W-N
+    name: 'Spanish Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(SPANISH)#'
+  ukranianLanguageNonfiction:
+    flags: A-W-N
+    name: 'Ukranian Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(UKRAINIAN)#'
+  vietLanguageNonfiction:
+    flags: A-W-N
+    name: 'Vietnamese Nonfiction'
+    not: '#[\s-]j\s?|j[EB]|jbb|Children|Music|\sy\s|(^(CD\s[a-zA-Z]+[\s-])4\d{2})#'
+    regex: '#(VIET)#'
   y:
     flags: Y-F
     name: y
@@ -802,6 +1038,7 @@ categories:
 lists:
   new:
     categories:
+      - newJ
       - newAdultFiction
       - newAdultNonfiction
       - killawatt
@@ -809,34 +1046,52 @@ lists:
     name: 'New & Unmatched'
   cl:
     categories:
-      - newJ
       - bluJ
       - dvdJ
       - dvdJNonfiction
-      - je
-      - binBooksJbb
-      - binBooksConcept
-      - binBooksToddler
-      - preschoolCurriculumBag
-      - itu2019sInTheBag
-      - toddler
-      - musicCds
-      - audiobooksJ
-      - beginningFacts
-      - reader
-      - parenting
       - jWorldLanguageFiction
       - jWorldLanguageNonfiction
       - jWorldLanguageMedia
-      - jWorldLanguageBb
+      - jArabicLanguageFiction
+      - jArabicLanguageNonfiction
+      - jChineseLanguageFiction
+      - jChineseLanguageNonfiction
+      - jFrenchLanguageFiction
+      - jFrenchLanguageNonfiction
+      - jGermanLanguageFiction
+      - jGermanLanguageNonfiction
+      - jJapaneseLanguageFiction
+      - jJapaneseLanguageNonfiction
+      - jRussianLanguageFiction
+      - jRussianLanguageNonfiction
+      - jSpanishLanguageFiction
+      - Lector
       - infoBasica
+      - jSpanishLanguageNonfiction
+      - jUkranianLanguageFiction
+      - jUkranianLanguageNonfiction
+      - jVietLanguageFiction
+      - jVietLanguageNonfiction
+      - jWorldLanguageBb
+      - binBooksJbb
+      - binBooksConcept
+      - binBooksToddler
+      - je
+      - reader
       - j
+      - jLargePrintFiction
+      - beginningFacts
       - jNonfiction
       - jBiography
-      - jHoliday
+      - parenting
+      - musicCds
+      - audiobooksJ
+      - preschoolCurriculumBag
+      - itu2019sInTheBag
+      - toddler
       - jgnf
       - jgnnf
-      - jLargePrintFiction
+      - jHoliday
     name: CL
   hum1:
     categories:
@@ -850,7 +1105,7 @@ lists:
       - deweyRange_11_390499
       - deweyRange_12_400_Media
       - deweyRange_13_700711
-      - deweyRange_14_720758
+      - deweyRange_14_718758
     name: HUM One
   hum2:
     categories:
@@ -865,12 +1120,26 @@ lists:
     name: HUM Two
   hum3:
     categories:
-      - map
-      - mapRoom
-      - mapRoomAtlas
-      - mapRoomOversize
       - worldLanguageFiction
       - worldLanguageNonfiction
+      - arabicLanguageFiction
+      - arabicLanguageNonfiction
+      - chineseLanguageFiction
+      - chineseLanguageNonfiction
+      - frenchLanguageFiction
+      - frenchLanguageNonfiction
+      - germanLanguageFiction
+      - germanLanguageNonfiction
+      - japaneseLanguageFiction
+      - japaneseLanguageNonfiction
+      - russianLanguageFiction
+      - russianLanguageNonfiction
+      - spanishLanguageFiction
+      - spanishLanguageNonfiction
+      - ukranianLanguageFiction
+      - ukranianLanguageNonfiction
+      - vietLanguageFiction
+      - vietLanguageNonfiction
       - yWorldLanguage
       - yWorldLanguageNonfiction
       - deweyRange_20_790999_OVERSIZE
@@ -882,22 +1151,30 @@ lists:
     categories:
       - cdFiction
       - cdMystery
-      - cdScifi
       - cdWestern
+      - cdScifi
       - cd001399500999
       - cdB
       - bluRayDvds
       - dvdDrama
+      - dvdDRAMA
       - dvdComedy
+      - dvdCOMEDY
       - dvdAction
+      - dvdACTION
       - dvdHorror
+      - dvdHORROR
       - dvdMusicals
+      - dvdMUSICALS
       - dvdScifi
+      - dvdSCIFI
       - dvdWestern
+      - dvdWESTERN
       - dvdForeign
+      - dvdFOREIGN
       - worldLanguageDvd
       - worldLanguageMedia
-      - dvd000999
+      - dvd000399500999
       - dvdrom
       - cdBlues
       - cdChamber
@@ -950,16 +1227,16 @@ lists:
       - yNonfiction
       - yBiography
       - lgetypeFiction
+      - lgetypeWestern
       - lgetypeMystery
       - lgetypeScifi
-      - lgetypeWestern
       - lgetypeNonfiction
       - lgetypeBiography
       - mystery
+      - urban
       - shortStories
       - fiction
       - western
-      - urban
     name: PL
   sb1:
     categories:
@@ -980,5 +1257,7 @@ lists:
     name: S&B Two
   stx:
     categories:
-      - stx001999
+      - stx001739
+      - stx740999
     name: STX
+

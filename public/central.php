@@ -30,18 +30,18 @@ if ( filesize($data_file) > 2 ) {
         foreach ($cen_config['categories'] as $key => $category) {
 
             $match = 0;
-            if ( ! empty($category['flags']) && $category['flags'] == $entry['currentLocation'] ) {
+	    if ( ! empty($category['flags']) && $category['flags'] == $entry['currentLocation'] ) {
 
                 $regex = $category['regex'];
                 $not = $category['not'];
 
                 // Not actually regex, but a range of Dewey numbers
-                if ( is_array($category['regex']) && preg_match('/^deweyRange/', $key) ) {
-                    $dewey = preg_replace('/^(\d{3})(.*)/', "$1", $entry['callNumber']);
-                    if ( $dewey >= $category['regex'][0] && $dewey <= $category['regex'][1] ) {
+                if ( is_array($regex) ) {
+		    $dewey = preg_replace('/^(\d{2,3})(.*)/', "$1", $entry['callNumber']);
+                    if ( $dewey >= $regex[0] && $dewey <= $regex[1] ) {
                         $match = 1;
                     }
-                } elseif ( ! is_array($regex) ) {
+                } else {
                     // Check the regex before using it so as to produce a useful error message
                     if ( preg_match("$regex", null) === false ) {
                         error_log("\nInvalid regex in \"regex\": " . $regex . "\n");
