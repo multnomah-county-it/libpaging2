@@ -100,7 +100,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
 
             // Send email
             $to = $config['BRANCH_EMAILS'][$code];
-            $from = $config['EMAIL_FROM'];
+            $from = $config['email_from'];
             $subject = "$type Paging List for $name for $today";
 
             // Header for HTML content
