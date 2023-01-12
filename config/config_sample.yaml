@@ -2,6 +2,8 @@ base_path: /var/www/html
 base_URL: http://paging.multcolib.org
 logo_link_path: https://multcolib.org
 log_path: /var/log/paging
+email_from: system@library.org
+stats_email: person@library.org
 BRANCHES:
     ALB: Albina
     BMT: Belmont
@@ -46,4 +48,3 @@ BRANCH_EMAILS:
     TRT: person@library.org
     WOD: person@library.org
     ISM: person@library.org
-EMAIL_FROM: system@library.org
