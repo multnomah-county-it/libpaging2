@@ -1117,6 +1117,10 @@ lists:
       - gnNonfiction
       - sf
       - deweyRange_19_759899
+      - map
+      - mapRoom
+      - mapRoomAtlas
+      - mapRoomOversize
     name: HUM Two
   hum3:
     categories:
