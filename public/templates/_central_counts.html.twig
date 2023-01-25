@@ -1,18 +1,16 @@
 <div class="center-block">
-    <p class="spacing">
-        <table class="center-block">
-            {% for key, count in list_counts %}
-            {% if key != 'Total' %}
-            <tr>
-                <th>{{ key }}</th>
-                <td class="right">{{ count }}</td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-            <tr>
-                <th>Total</th>
-                <td class="right bold">{{ list_counts.Total }}</td>
-            </tr>
-        </table>    
-    </p>
+    <table class="center-block">
+        {% for key, count in list_counts %}
+        {% if key != 'Total' %}
+        <tr>
+            <th>{{ key }}</th>
+            <td class="right">{{ count }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <tr>
+            <th>Total</th>
+            <td class="right bold">{{ list_counts.Total }}</td>
+        </tr>
+    </table>    
 </div>
