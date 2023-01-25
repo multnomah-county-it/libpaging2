@@ -47,12 +47,16 @@ if ( ! empty($bib_key) && ! empty($field_list) ) {
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
+        echo $twig->render('_get_record_start.html.twig', []);
+
         echo $twig->render($template, [
             'base_URL' => $config['base_URL'],
             'record' => $record, 
             'author_search' => $author_search, 
             'title_search' => $title_search 
             ]);
+
+        echo $twig->render('_get_record_end.html.twig', []);
     }
 } 
 

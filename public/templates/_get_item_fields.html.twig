@@ -1,10 +1,10 @@
 <div class="center-block">
     <table class="center-block">
         {% for key, field in record %}
-            <tr>
-                <th class="c1">{{ key }}</th>
-                <td class="c2" colspan="2">{{ field }}</td>
-            </tr>
+        <tr>
+            <th class="c1">{{ key }}</th>
+            <td class="c2">{{ field }}</td>
+        </tr>
         {% endfor %}
     </table>
     <br>

@@ -31,7 +31,9 @@ if ( ! empty($item_key) && ! empty($field_list) ) {
     }
 
     if ( $ilsws->code >= 200 && $ilsws->code < 400 ) {
+        echo $twig->render('_get_record_start.html.twig', []);
         echo $twig->render('_get_item_fields.html.twig', ['record' => $record]);
+        echo $twig->render('_get_record_end.html.twig', []);
     }
 } 
 

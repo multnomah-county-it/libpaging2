@@ -178,10 +178,12 @@ pre {
 
 #record .c1 {
     width: 14em;
+    white-space: nowrap;
 }
 
 #record .c2 {
     width: 56em;
+    white-space: nowrap;
 }
 
 #record table {

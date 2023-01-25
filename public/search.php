@@ -68,9 +68,12 @@ if ( $index && $terms && $field_list ) {
 
     if ( $ilsws->code >=200 && $ilsws->code < 400 ) {
 
+        echo $twig->render('_get_record_start.html.twig', []);
+
         foreach ($response as $record) {
             $author_search = $ilsws->prepare_search($record['author']);
             $title_search = $ilsws->prepare_search($record['title']);
+
 
             echo $twig->render('_get_bib_fields.html.twig', [
                 'base_URL' => $config['base_URL'],
@@ -78,7 +81,10 @@ if ( $index && $terms && $field_list ) {
                 'author_search' => urlencode($author_search), 
                 'title_search' => urlencode($title_search)
                 ]);
+
         }
+
+        echo $twig->render('_get_record_end.html.twig', []);
     }
 } 
 
