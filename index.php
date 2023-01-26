@@ -3,6 +3,15 @@
 require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 
+header("Content-Type: text/html; charset=UTF-8");
+header("application-name: libpaging2");
+header("author: Multnomah County IT");
+header("language: en");
+header("robots: noindex");
+header("Strict-Transport-Security: max-age=63072000; includeSubDomains; preload");
+header("X-Frame-Options: DENY");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+
 // Get the configuration
 $config = Yaml::parseFile('config/config.yaml');
 $config['template_path'] = $config['base_path'] . '/public/templates';
