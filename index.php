@@ -11,6 +11,7 @@ header("robots: noindex");
 header("Strict-Transport-Security: max-age=63072000; includeSubDomains; preload");
 header("X-Frame-Options: DENY");
 header("Referrer-Policy: strict-origin-when-cross-origin");
+header("Cache-Control: no-cache");
 
 // Get the configuration
 $config = Yaml::parseFile('config/config.yaml');
