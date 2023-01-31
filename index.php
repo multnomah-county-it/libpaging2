@@ -4,6 +4,8 @@ require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 
 header("Content-Type: text/html; charset=UTF-8");
+header("X-Content-Type-Options: nosniff");
+header("Content-Security-Policy: default-src 'self'; img-src https://*; child-src 'none'");
 header("application-name: libpaging2");
 header("author: Multnomah County IT");
 header("language: en");
