@@ -3,17 +3,17 @@
 require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 
-header("Content-Type: text/html; charset=UTF-8");
-header("X-Content-Type-Options: nosniff");
-header("Content-Security-Policy: default-src 'self'; img-src https://*; child-src 'none'");
-header("application-name: libpaging2");
-header("author: Multnomah County IT");
-header("language: en");
-header("robots: noindex");
-header("Strict-Transport-Security: max-age=63072000; includeSubDomains; preload");
-header("X-Frame-Options: DENY");
-header("Referrer-Policy: strict-origin-when-cross-origin");
+header("Application-Name: libpaging2");
+header("Author: Multnomah County IT");
 header("Cache-Control: no-cache");
+header("Content-Type: text/html; charset=UTF-8");
+header("Content-Security-Policy: default-src 'self'; img-src https://*; style-src-elem https://*.multcolib.org; child-src 'none'");
+header("Language: en");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+header("Robots: noindex");
+header("Strict-Transport-Security: max-age=63072000; includeSubDomains; preload");
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: DENY");
 
 // Get the configuration
 $config = Yaml::parseFile('config/config.yaml');
