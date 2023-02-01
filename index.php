@@ -7,7 +7,7 @@ header("Application-Name: libpaging2");
 header("Author: Multnomah County IT");
 header("Cache-Control: no-cache");
 header("Content-Type: text/html; charset=UTF-8");
-header("Content-Security-Policy: default-src 'self'; img-src https://*; style-src-elem https://*.multcolib.org; child-src 'none'");
+header("Content-Security-Policy: default-src 'self'; img-src https://*; style-src https://*.multcolib.org; style-src-elem https://*.multcolib.org; child-src 'none'");
 header("Language: en");
 header("Referrer-Policy: strict-origin-when-cross-origin");
 header("Robots: noindex");

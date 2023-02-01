@@ -104,6 +104,10 @@ p {
     text-align: left;
 }
 
+p.pagebreak {
+    page-break-after: always;
+}
+
 footer {
     font-size: 70%;
 }
