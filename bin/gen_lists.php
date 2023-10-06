@@ -109,7 +109,7 @@ foreach ($config['BRANCHES'] as $code => $name) {
             $entries = file($data_file);
 
             $body = $twig->render('_gen_lists_header.html.twig', ['base_URL' => $config['base_URL']]);
-            $body .= $twig->render('_list_start.html.twig', ['base_URL' => $config['base_URL'], 'type' => $type, 'name' => $name, 'today' => $today]);
+            $body .= $twig->render('_list_start.html.twig', ['base_URL' => $config['base_URL'], 'type' => $type, 'name' => $name, 'today' => $today, 'list_count' => $stats[$today][$code]]);
 
             foreach ($entries as $line) {
                 $entry = json_decode($line, true);
