@@ -1,14 +1,14 @@
 <?php
 
-// Remove non-printing characters, particularly returns
-$_GET['field_list'] = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $_GET['field_list']);
-
 // Set the search values based on defaults and inputs
 $field_list = ! empty($_GET['field_list']) ? $_GET['field_list'] : 'key,author,title,bib{650_a,856_u},callList{callNumber,itemList{barcode,library}}';
 $index = ! empty($_GET['index']) ? $_GET['index'] : 'SUBJECT';
 $terms = ! empty($_GET['terms']) ? $_GET['terms'] : '';
 $ct = ! empty($_GET['ct']) ? $_GET['ct'] : '50';
 $j = ! empty($_GET['j']) ? $_GET['j'] : 'AND';
+
+// Remove non-printing characters, particularly returns
+$field_list = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $field_list);
 
 // Check the appropriate radio buttons
 $j_AND = ' checked';
