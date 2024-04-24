@@ -63,7 +63,7 @@ categories:
     flags: A-M-A
     name: 'CD 400-499'
     not: ''
-    regex: '#^CD [4]\d{2}#'  
+    regex: '#^CD [4]\d{2}#' 
   cdB:
     flags: A-M-A
     name: 'CD- B-'
@@ -744,6 +744,11 @@ categories:
     name: 'LGE-TYPE SCIFI'
     not: ''
     regex: '#^LGE-TYPE\s(SCIFI|SF)#'
+  lgetypeUrban:
+    flags: A-P
+    name: 'LGE-TYPE URBAN'
+    not: ''
+    regex: '#^LGE-TYPE\sURBAN#'
   lgetypeWestern:
     flags: A-P
     name: 'LGE-TYPE WESTERN'
@@ -849,6 +854,11 @@ categories:
     name: 'Sheet Music OVERSIZE'
     not: ''
     regex: '#^((Score - Parts\s)|R)?R?M-#'
+  sheetMusic2M:
+    flags: 033-CEN
+    name: '2M Sheet Music'
+    not: ''
+    regex: '#^((Score - Parts\s)|R)?R?M#'
   shortStories:
     flags: A-F
     name: 'Short Stories'
@@ -868,11 +878,16 @@ categories:
     regex:
       - 740
       - 999
-  toddler:
-    flags: J-E-T
-    name: Toddler
-    not: ''
-    regex: '#(^TODDLER)|(Toddler\sCurriculum)#'
+  stxje:
+    flags: 003-CEN
+    name: 'STX jE'
+    not: '#Beginning\sFacts#'
+    regex: '#^(JE|jE)\s[A-Z][^a-z]#'
+  stxjNonfiction:
+    flags: 003-CEN
+    name: 'STX j non-fiction'
+    not: '#(Beginning\sFacts|Parenting|Holiday)#'
+    regex: '#^j\s\d{3}#'
   unmatched:
     name: Unmatched
   urban:
@@ -997,7 +1012,7 @@ categories:
     regex: '#(VIET)#'
   y:
     flags: Y-F
-    name: y
+    name: 'y Fiction'
     not: '#\by\sBIO\s\b#'
     regex: '#^y\s[^\d]#'
   yBiography:
@@ -1022,7 +1037,7 @@ categories:
     regex: '#(ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\sy\s#'
   ygn:
     flags: Y-G-F
-    name: 'ygn fiction'
+    name: 'ygn Fiction'
     not: ''
     regex: '#^ygn#'
   ygnNonFiction:
@@ -1036,136 +1051,125 @@ categories:
     not: ''
     regex: '#^ZINE#'
 lists:
-  new:
+  unmatched:
     categories:
-      - newJ
-      - newAdultFiction
-      - newAdultNonfiction
       - killawatt
       - unmatched
-    name: 'New & Unmatched'
-  cl:
+    name: 'Unmatched'
+  1n:
     categories:
-      - bluJ
-      - dvdJ
-      - dvdJNonfiction
-      - jWorldLanguageFiction
-      - jWorldLanguageNonfiction
-      - jWorldLanguageMedia
-      - jArabicLanguageFiction
-      - jArabicLanguageNonfiction
-      - jChineseLanguageFiction
-      - jChineseLanguageNonfiction
-      - jFrenchLanguageFiction
-      - jFrenchLanguageNonfiction
-      - jGermanLanguageFiction
-      - jGermanLanguageNonfiction
-      - jJapaneseLanguageFiction
-      - jJapaneseLanguageNonfiction
-      - jRussianLanguageFiction
-      - jRussianLanguageNonfiction
-      - jSpanishLanguageFiction
-      - Lector
-      - infoBasica
-      - jSpanishLanguageNonfiction
-      - jUkranianLanguageFiction
-      - jUkranianLanguageNonfiction
-      - jVietLanguageFiction
-      - jVietLanguageNonfiction
-      - jWorldLanguageBb
-      - binBooksJbb
-      - binBooksConcept
-      - binBooksToddler
-      - je
-      - reader
-      - j
-      - jLargePrintFiction
-      - beginningFacts
-      - jNonfiction
-      - jBiography
-      - parenting
-      - musicCds
-      - audiobooksJ
-      - preschoolCurriculumBag
-      - itu2019sInTheBag
-      - toddler
-      - jgnf
-      - jgnnf
-      - jHoliday
-    name: CL
-  hum1:
-    categories:
-      - musicScores
-      - easyPianoScores
-      - multiHandScores
-      - miniatureScores
-      - scoresInParts
-      - sheetMusicOversize
-      - deweyRange_10_010299
-      - deweyRange_11_390499
-      - deweyRange_12_400_Media
-      - deweyRange_13_700711
-      - deweyRange_14_718758
-    name: HUM One
-  hum2:
-    categories:
-      - deweyRange_15_010299_OVERSIZE
-      - deweyRange_16_390499_OVERSIZE
-      - deweyRange_17_700711_OVERSIZE
-      - deweyRange_18_718789_OVERSIZE
-      - gn
-      - gnNonfiction
-      - sf
-      - deweyRange_19_759899
-      - map
-      - mapRoom
-      - mapRoomAtlas
-      - mapRoomOversize
-    name: HUM Two
-  hum3:
-    categories:
+      - lgetypeFiction
+      - lgetypeMystery
+      - lgetypeScifi
+      - lgetypeUrban
+      - lgetypeWestern
+      - lgetypeNonfiction
+      - lgetypeBiography
+      - worldLanguageDvd
+      - worldLanguageMedia
+      - cdChinese
+      - chineseLanguageFiction
+      - chineseLanguageNonfiction
+      - russianLanguageFiction
+      - russianLanguageNonfiction
+      - cdRussian
+      - spanishLanguageFiction
+      - spanishLanguageNonfiction
+      - cdSpanish
+      - vietLanguageFiction
+      - vietLanguageNonfiction
+      - cdViet
       - worldLanguageFiction
       - worldLanguageNonfiction
       - arabicLanguageFiction
       - arabicLanguageNonfiction
-      - chineseLanguageFiction
-      - chineseLanguageNonfiction
       - frenchLanguageFiction
       - frenchLanguageNonfiction
       - germanLanguageFiction
       - germanLanguageNonfiction
       - japaneseLanguageFiction
       - japaneseLanguageNonfiction
-      - russianLanguageFiction
-      - russianLanguageNonfiction
-      - spanishLanguageFiction
-      - spanishLanguageNonfiction
       - ukranianLanguageFiction
       - ukranianLanguageNonfiction
-      - vietLanguageFiction
-      - vietLanguageNonfiction
+      - newAdultFiction
+      - newAdultNonfiction
+    name: '1 North (WSYL, World Language, LP, new)'
+  1sa:
+    categories:
+      - jWorldLanguageBb
+      - binBooksJbb
+      - je
+      - binBooksConcept
+      - binBooksToddler
+      - parenting
+      - reader
+      - beginningFacts
+      - preschoolCurriculumBag
+      - itu2019sInTheBag
+      - jNonfiction
+      - jBiography
+      - jWorldLanguageFiction
+      - jWorldLanguageNonfiction
+      - jWorldLanguageMedia
+      - jArabicLanguageFiction
+      - jArabicLanguageNonfiction
+      - jFrenchLanguageFiction
+      - jFrenchLanguageNonfiction
+      - jGermanLanguageFiction
+      - jGermanLanguageNonfiction
+      - jJapaneseLanguageFiction
+      - jJapaneseLanguageNonfiction
+      - jUkranianLanguageFiction
+      - jUkranianLanguageNonfiction
+      - bluJ
+      - dvdJ
+      - dvdJNonfiction
+      - musicCds
+      - audiobooksJ
+      - jSpanishLanguageFiction
+      - Lector
+      - infoBasica
+      - jSpanishLanguageNonfiction
+      - jRussianLanguageFiction
+      - jRussianLanguageNonfiction
+      - jChineseLanguageFiction
+      - jChineseLanguageNonfiction
+      - jVietLanguageFiction
+      - jVietLanguageNonfiction
+    name: '1 South A (Early childhood, jNF, WSYL, media)'
+  1sb:
+    categories:
+      - newJ
+      - jHoliday
+      - jgnf
+      - jgnnf
+      - j
+      - jLargePrintFiction
+      - ygn
+      - ygnNonFiction
+      - y
+      - lgetypeY
+      - audiobooksFictionY
+      - audiobooksNonfictionOnlyY
+      - yNonfiction
+      - yBiography
       - yWorldLanguage
       - yWorldLanguageNonfiction
-      - deweyRange_20_790999_OVERSIZE
-      - biographyOversize
-      - deweyRange_21_900999
-      - biography
-    name: HUM Three
-  media:
+    name: '1 South B (j Fic & YA)'
+  2ne:
     categories:
-      - cdFiction
-      - cdMystery
-      - cdWestern
-      - cdScifi
-      - cd001399500999
-      - cdB
+      - gn
+      - gnNonfiction
+      - zine
       - bluRayDvds
-      - dvdDrama
-      - dvdDRAMA
-      - dvdComedy
-      - dvdCOMEDY
       - dvdAction
       - dvdACTION
+      - dvdComedy
+      - dvdCOMEDY
+      - dvdDrama
+      - dvdDRAMA
+      - dvdForeign
+      - dvdFOREIGN
       - dvdHorror
       - dvdHORROR
       - dvdMusicals
@@ -1174,15 +1178,16 @@ lists:
       - dvdSCIFI
       - dvdWestern
       - dvdWESTERN
-      - dvdForeign
-      - dvdFOREIGN
-      - worldLanguageDvd
-      - worldLanguageMedia
       - dvd000399500999
       - dvdrom
+      - cdFiction
+      - cdMystery
+      - cdScifi
+      - cdWestern
+      - cd001399500999
+      - cdB
       - cdBlues
       - cdChamber
-      - cdChinese
       - cdChoral
       - cdChristian
       - cdConcerto
@@ -1203,11 +1208,8 @@ lists:
       - cdPopular
       - cdRap
       - cdReggae
-      - cdRussian
-      - cdSpanish
       - cdStrings
       - cdSymphony
-      - cdViet
       - cdVocal
       - cdWedding
       - cdWinds
@@ -1219,49 +1221,63 @@ lists:
       - cdWorldPacific
       - cdWorldSouthAmerica
       - cdXmas
-    name: 'Media'
-  pl:
+    name: '2 North/East (GNs & Media)'
+  2s:
     categories:
-      - ygn
-      - ygnNonFiction
-      - audiobooksFictionY
-      - audiobooksNonfictionOnlyY
-      - y
-      - lgetypeY
-      - yNonfiction
-      - yBiography
-      - lgetypeFiction
-      - lgetypeWestern
-      - lgetypeMystery
-      - lgetypeScifi
-      - lgetypeNonfiction
-      - lgetypeBiography
-      - mystery
-      - urban
-      - shortStories
-      - fiction
       - western
-    name: PL
-  sb1:
+      - fiction
+      - shortStories
+      - urban
+      - mystery
+      - sf
+    name: '2 South (Fiction & Genres)'
+  3e:
     categories:
-      - zine
-      - deweyRange_1_001009_OVERSIZE
-      - deweyRange_2_300389_OVERSIZE
-      - deweyRange_3_500699_OVERSIZE
-      - deweyRange_4_712717_OVERSIZE
-      - deweyRange_5_001009
+      - map
+      - mapRoom
       - deweyRange_6_300389
+      - deweyRange_11_390499
+      - deweyRange_12_400_Media
       - deweyRange_7_500599
-    name: S&B One
-  sb2:
-    categories:
-      - pageturners
       - deweyRange_8_600699
+    name: '3 East (300-699)'
+  3n:
+    categories:
+      - biography
+      - deweyRange_13_700711
       - deweyRange_9_712717
-    name: S&B Two
+      - deweyRange_14_718758
+      - deweyRange_19_759899
+      - deweyRange_21_900999
+      - deweyRange_1_001009_OVERSIZE
+      - deweyRange_15_010299_OVERSIZE
+      - deweyRange_2_300389_OVERSIZE
+      - deweyRange_16_390499_OVERSIZE
+      - deweyRange_3_500699_OVERSIZE
+      - deweyRange_17_700711_OVERSIZE
+      - deweyRange_4_712717_OVERSIZE
+      - deweyRange_18_718789_OVERSIZE
+      - deweyRange_20_790999_OVERSIZE
+      - mapRoomAtlas
+      - mapRoomOversize
+      - biographyOversize
+    name: '3 North (700-999, Bio, OS)'
+  3s:
+    categories:
+      - musicScores
+      - easyPianoScores
+      - multiHandScores
+      - miniatureScores
+      - scoresInParts
+      - sheetMusicOversize
+      - deweyRange_5_001009
+      - deweyRange_10_010299
+    name: '3 South (Sheet Music, 000-299)'
   stx:
     categories:
       - stx001739
       - stx740999
-    name: STX
-
+      - sheetMusic2M
+      - stxjNonfiction
+      - stxje
+    name: 'Basement, Sub-Basement, 2M STX'
