@@ -284,151 +284,116 @@ categories:
     name: 'CD Xmas'
     not: ''
     regex: '#^CD\sXmas #'
-  deweyRange_10_010299:
-    flags: A-N
-    name: 010-299
-    not: '#OVERSIZE#'
-    regex:
-      - 10
-      - 299
-  deweyRange_11_390499:
-    flags: A-N
-    name: 390-499
-    not: '#OVERSIZE#'
-    regex:
-      - 390
-      - 499
-  deweyRange_12_400_Media:
-    flags: A-M-A
-    name: '400 Media'
-    not: ''
-    regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?4\d{2}#'
-  deweyRange_13_700711:
-    flags: A-N
-    name: 700-711
-    not: ''
-    regex:
-      - 700
-      - 711
-  deweyRange_14_718758:
-    flags: A-N
-    name: 718-758
-    not: '#OVERSIZE#'
-    regex:
-      - 718
-      - 758
-  deweyRange_15_010299_OVERSIZE:
+  deweyRange_01_000299_OVERSIZE:
     flags: A-N-O
-    name: '010-299 OVERSIZE'
-    not: ''
-    regex:
-      - 10
-      - 299
-  deweyRange_16_390499_OVERSIZE:
-    flags: A-N-O
-    name: '390-499 OVERSIZE'
-    not: ''
-    regex:
-      - 390
-      - 499
-  deweyRange_17_700711_OVERSIZE:
-    flags: A-N-O
-    name: '700-711 OVERSIZE'
-    not: ''
-    regex:
-      - 700
-      - 711
-  deweyRange_18_718789_OVERSIZE:
-    flags: A-N-O
-    name: '718-789 OVERSIZE'
-    not: ''
-    regex:
-      - 718
-      - 789
-  deweyRange_19_759899:
-    flags: A-N
-    name: 759-899
-    not: '#OVERZIZE#'
-    regex:
-      - 759
-      - 899
-  deweyRange_20_790999_OVERSIZE:
-    flags: A-N-O
-    name: '790-999 OVERSIZE'
-    not: ''
-    regex:
-      - 790
-      - 999
-  deweyRange_1_001009_OVERSIZE:
-    flags: A-N-O
-    name: '001-009 OVERSIZE'
+    name: '000-299 OVERSIZE'
     not: ''
     regex:
       - 1
-      - 9
-  deweyRange_21_900999:
-    flags: A-N
-    name: 900-999
-    not: '#OVERSIZE#'
-    regex:
-      - 900
-      - 999
-  deweyRange_2_300389_OVERSIZE:
+      - 299
+  deweyRange_02_300399_OVERSIZE:
     flags: A-N-O
-    name: '300-389 OVERSIZE'
+    name: '300-399 OVERSIZE'
     not: ''
     regex:
       - 300
-      - 389
-  deweyRange_3_500699_OVERSIZE:
+      - 399
+  deweyRange_03_400499_OVERSIZE:
+    flags: A-N-O
+    name: '400-499 OVERSIZE'
+    not: ''
+    regex:
+      - 400
+      - 499
+  deweyRange_04_500699_OVERSIZE:
     flags: A-N-O
     name: '500-699 OVERSIZE'
     not: ''
     regex:
       - 500
       - 699
-  deweyRange_4_712717_OVERSIZE:
+  deweyRange_05_700799_OVERSIZE:
     flags: A-N-O
-    name: '712-717 OVERSIZE'
+    name: '700-799 OVERSIZE'
     not: ''
     regex:
-      - 712
-      - 717
-  deweyRange_5_001009:
+      - 700
+      - 799
+  deweyRange_06_800999_OVERSIZE:
+    flags: A-N-O
+    name: '800-999 OVERSIZE'
+    not: ''
+    regex:
+      - 800
+      - 999
+  deweyRange_07_000299:
     flags: A-N
-    name: 001-009
-    not: '#Beginning Facts#'
+    name: 000-299
+    not: '#OVERSIZE#'
     regex:
       - 1
-      - 9
-  deweyRange_6_300389:
+      - 299
+  deweyRange_08_300399:
     flags: A-N
-    name: 300-389
+    name: 300-399
     not: '#Beginning Facts#'
     regex:
       - 300
-      - 389
-  deweyRange_7_500599:
+      - 399
+  deweyRange_09_400499:
+    flags: A-N
+    name: 400-499
+    not: '#OVERSIZE#'
+    regex:
+      - 400
+      - 499
+  deweyRange_10_400_Media:
+    flags: A-M-A
+    name: '400 Media'
+    not: ''
+    regex: '#(DVD|CD-?)\s((ARABIC|CHINESE|CZECH|DANISH|DUTCH|ESPERANTO|FARSI|FINNISH|FRENCH|GERMAN|GREEK|HAWAIIAN|HEBREW|HMONG|HUNGARIAN|ITALIAN|JAPANESE|KHMER|KOREAN|LAO|LATIN|NORWEGIAN|POLISH|PORTUGUES|ROMANIAN|RUSSIAN|SERBOCRO|SOMALI|SPANISH|SWEDISH|TAGALOG|THAI|UKRAINIAN|VIET)\s)?4\d{2}#'
+  deweyRange_11_500599:
     flags: A-N
     name: 500-599
     not: '#Beginning Facts#'
     regex:
       - 500
       - 599
-  deweyRange_8_600699:
+  deweyRange_12_600699:
     flags: A-N
     name: 600-699
     not: '#Beginning Facts#'
     regex:
       - 600
       - 699
-  deweyRange_9_712717:
+  deweyRange_13_700749:
     flags: A-N
-    name: 712-717
+    name: 700-749
     not: ''
     regex:
-      - 712
-      - 717
+      - 700
+      - 749
+  deweyRange_14_750799:
+    flags: A-N
+    name: 750-799
+    not: '#OVERSIZE#'
+    regex:
+      - 750
+      - 799
+  deweyRange_15_800899:
+    flags: A-N
+    name: 800-899
+    not: '#OVERZIZE#'
+    regex:
+      - 800
+      - 899
+  deweyRange_16_900999:
+    flags: A-N
+    name: 900-999
+    not: '#OVERSIZE#'
+    regex:
+      - 900
+      - 999
   dvd000399500999:
     flags: A-M-D
     name: 'DVD 000-399 500-999'
@@ -1056,7 +1021,7 @@ lists:
       - killawatt
       - unmatched
     name: 'Unmatched'
-  1n:
+  1s:
     categories:
       - lgetypeFiction
       - lgetypeMystery
@@ -1093,8 +1058,8 @@ lists:
       - ukranianLanguageNonfiction
       - newAdultFiction
       - newAdultNonfiction
-    name: '1 North (WSYL, World Language, LP, new)'
-  1sa:
+    name: '1 South (WSYL, World Language, LP, new)'
+  1na:
     categories:
       - jWorldLanguageBb
       - binBooksJbb
@@ -1136,8 +1101,8 @@ lists:
       - jChineseLanguageNonfiction
       - jVietLanguageFiction
       - jVietLanguageNonfiction
-    name: '1 South A (Early childhood, jNF, WSYL, media)'
-  1sb:
+    name: '1 North A (Early childhood, jNF, WSYL, media)'
+  1nb:
     categories:
       - newJ
       - jHoliday
@@ -1155,7 +1120,7 @@ lists:
       - yBiography
       - yWorldLanguage
       - yWorldLanguageNonfiction
-    name: '1 South B (j Fic & YA)'
+    name: '1 North B (j Fic & YA)'
   2ne:
     categories:
       - gn
@@ -1231,37 +1196,39 @@ lists:
       - mystery
       - sf
     name: '2 South (Fiction & Genres)'
-  3e:
+  3ea:
     categories:
       - map
       - mapRoom
-      - deweyRange_6_300389
-      - deweyRange_11_390499
-      - deweyRange_12_400_Media
-      - deweyRange_7_500599
-      - deweyRange_8_600699
-    name: '3 East (300-699)'
-  3n:
+      - deweyRange_08_300399
+      - deweyRange_09_400499
+      - deweyRange_10_400_Media
+      - deweyRange_11_500599
+    name: '3 East A (300-599)'
+  3eb:
+    categories:
+      - deweyRange_12_600699
+    name: '3 East B (600-699)'
+  3na:
     categories:
       - biography
-      - deweyRange_13_700711
-      - deweyRange_9_712717
-      - deweyRange_14_718758
-      - deweyRange_19_759899
-      - deweyRange_21_900999
-      - deweyRange_1_001009_OVERSIZE
-      - deweyRange_15_010299_OVERSIZE
-      - deweyRange_2_300389_OVERSIZE
-      - deweyRange_16_390499_OVERSIZE
-      - deweyRange_3_500699_OVERSIZE
-      - deweyRange_17_700711_OVERSIZE
-      - deweyRange_4_712717_OVERSIZE
-      - deweyRange_18_718789_OVERSIZE
-      - deweyRange_20_790999_OVERSIZE
+      - deweyRange_13_700749
+      - deweyRange_14_750799
+    name: '3 North A (700-799, Bio)'
+  3nb:
+    categories:
+      - deweyRange_15_800899
+      - deweyRange_16_900999
+      - deweyRange_01_000299_OVERSIZE
+      - deweyRange_02_300399_OVERSIZE
+      - deweyRange_03_400499_OVERSIZE
+      - deweyRange_04_500699_OVERSIZE
+      - deweyRange_05_700799_OVERSIZE
+      - deweyRange_06_800999_OVERSIZE
       - mapRoomAtlas
       - mapRoomOversize
       - biographyOversize
-    name: '3 North (700-999, Bio, OS)'
+    name: '3 North B (800-999, OS)'
   3s:
     categories:
       - musicScores
@@ -1270,8 +1237,7 @@ lists:
       - miniatureScores
       - scoresInParts
       - sheetMusicOversize
-      - deweyRange_5_001009
-      - deweyRange_10_010299
+      - deweyRange_07_000299
     name: '3 South (Sheet Music, 000-299)'
   stx:
     categories:
