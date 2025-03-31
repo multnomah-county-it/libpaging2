@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78d1261356d20f991049207f3cf43972",
+    "content-hash": "588cc7b48f24ed413559b694fce73325",
     "packages": [
         {
             "name": "curl/curl",
@@ -66,23 +66,23 @@
         },
         {
             "name": "multnomah-county-it/libilsws",
-            "version": "dev-dev",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/multnomah-county-it/libilsws.git",
-                "reference": "8a58072e953d9e44d27f94ab0032f591a2a3e958"
+                "reference": "93f2cb771605993340a76d4b4e66591ecd5bf5f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/8a58072e953d9e44d27f94ab0032f591a2a3e958",
-                "reference": "8a58072e953d9e44d27f94ab0032f591a2a3e958",
+                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/93f2cb771605993340a76d4b4e66591ecd5bf5f3",
+                "reference": "93f2cb771605993340a76d4b4e66591ecd5bf5f3",
                 "shasum": ""
             },
             "require": {
                 "curl/curl": ">=2.3",
                 "php": ">=5.6.0",
                 "phpmailer/phpmailer": "^6.9",
-                "symfony/yaml": "~4||~5.4||~6",
+                "symfony/yaml": "~4||~5.4||~6||~7",
                 "twig/twig": "^3.0"
             },
             "require-dev": {
@@ -107,9 +107,9 @@
             "description": "PHP package to support use of the SirsiDynix Symphony Web Services API (ILSWS)",
             "support": {
                 "issues": "https://github.com/multnomah-county-it/libilsws/issues",
-                "source": "https://github.com/multnomah-county-it/libilsws/tree/dev"
+                "source": "https://github.com/multnomah-county-it/libilsws/tree/v1.4.1"
             },
-            "time": "2025-02-18T21:24:03+00:00"
+            "time": "2025-03-31T15:41:09+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -420,28 +420,28 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v6.4.18",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "bf598c9d9bb4a22f495a4e26e4c4fce2f8ecefc5"
+                "reference": "4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/bf598c9d9bb4a22f495a4e26e4c4fce2f8ecefc5",
-                "reference": "bf598c9d9bb4a22f495a4e26e4c4fce2f8ecefc5",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912",
+                "reference": "4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
-                "symfony/deprecation-contracts": "^2.5|^3",
+                "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
-                "symfony/console": "<5.4"
+                "symfony/console": "<6.4"
             },
             "require-dev": {
-                "symfony/console": "^5.4|^6.0|^7.0"
+                "symfony/console": "^6.4|^7.0"
             },
             "bin": [
                 "Resources/bin/yaml-lint"
@@ -472,7 +472,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.4.18"
+                "source": "https://github.com/symfony/yaml/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -488,7 +488,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-07T09:44:41+00:00"
+            "time": "2025-03-03T07:12:39+00:00"
         },
         {
             "name": "twig/twig",
@@ -573,9 +573,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "multnomah-county-it/libilsws": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
