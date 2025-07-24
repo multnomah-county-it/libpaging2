@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5754eef091f373073999d41d72c4325",
+    "content-hash": "a77195d1b7292cf503c68c0c90704b6b",
     "packages": [
         {
             "name": "curl/curl",
@@ -66,16 +66,16 @@
         },
         {
             "name": "multnomah-county-it/libilsws",
-            "version": "dev-dev",
+            "version": "v2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/multnomah-county-it/libilsws.git",
-                "reference": "3a477d9594bdf4e9b25c1853144ee104a5f9537c"
+                "reference": "233d5a86cedcbdb8169000c5508a0aa91f4de8e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/3a477d9594bdf4e9b25c1853144ee104a5f9537c",
-                "reference": "3a477d9594bdf4e9b25c1853144ee104a5f9537c",
+                "url": "https://api.github.com/repos/multnomah-county-it/libilsws/zipball/233d5a86cedcbdb8169000c5508a0aa91f4de8e5",
+                "reference": "233d5a86cedcbdb8169000c5508a0aa91f4de8e5",
                 "shasum": ""
             },
             "require": {
@@ -107,9 +107,9 @@
             "description": "PHP package to support use of the SirsiDynix Symphony Web Services API (ILSWS)",
             "support": {
                 "issues": "https://github.com/multnomah-county-it/libilsws/issues",
-                "source": "https://github.com/multnomah-county-it/libilsws/tree/dev"
+                "source": "https://github.com/multnomah-county-it/libilsws/tree/v2.0"
             },
-            "time": "2025-07-24T20:14:23+00:00"
+            "time": "2025-07-24T20:16:34+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -574,9 +574,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "multnomah-county-it/libilsws": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
