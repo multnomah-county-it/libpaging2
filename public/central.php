@@ -43,7 +43,7 @@ if (filesize($dataFile) > 2) {
                     }
                 } else {
                     // Check the regex before using it so as to produce a useful error message
-                    if (!is_valid_regex($regex)) {
+                    if (preg_match($regex, '') === false) { // Passing empty string to avoid warning
                         error_log("\nInvalid regex in \"regex\": " . $regex . "\n");
                     } elseif (preg_match($regex, $entry['callNumber'])) {
                         $match = 1;
@@ -51,7 +51,7 @@ if (filesize($dataFile) > 2) {
                 }
                 if (!empty($not)) {
                     // Check the regex before using it so as to produce a useful error message
-                    if (@preg_match($not, null) === false || preg_last_error() !== PREG_NO_ERROR) {
+                    if (preg_match($not, '') === false) { // Passing empty string to avoid warning
                         error_log("\nInvalid regex in \"not\": " . $not . "\n");
                     } elseif (preg_match($not, $entry['callNumber'])) {
                         $match = 0;
