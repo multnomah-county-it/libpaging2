@@ -51,7 +51,7 @@ if (filesize($dataFile) > 2) {
                 }
                 if (!empty($not)) {
                     // Check the regex before using it so as to produce a useful error message
-                    if (preg_match($not, '') === false) { // Passing empty string to avoid warning
+                    if (@preg_match($not, null) === false || preg_last_error() !== PREG_NO_ERROR) {
                         error_log("\nInvalid regex in \"not\": " . $not . "\n");
                     } elseif (preg_match($not, $entry['callNumber'])) {
                         $match = 0;
