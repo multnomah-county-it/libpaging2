@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Symfony\Component\Yaml\Yaml;
 
 $ilsws = new Libilsws\Libilsws('config/libilsws.yaml');
@@ -8,16 +10,16 @@ $token = $ilsws->connect();
 $type = 'title';
 $code = 'CEN';
 $name = $config['BRANCHES'][$code];
-$display_type = ucfirst($type);
+$displayType = ucfirst($type);
 
-$data_file = $config['data_path'] . "/$code" . "_$type.json";
-if ( filesize($data_file) > 2 ) {
-
-    $entries = file($data_file);
-    $cen_config = Yaml::parseFile('config/cen_config.yaml');
+$dataFile = $config['data_path'] . "/$code" . "_$type.json";
+if (filesize($dataFile) > 2) {
+    $entries = file($dataFile);
+    $cenConfig = Yaml::parseFile('config/cen_config.yaml');
 
     // Prepare the buckets to put our data in
-    foreach ($cen_config['categories'] as $key => $category) {
+    $data = [];
+    foreach ($cenConfig['categories'] as $key => $category) {
         $data[$key] = [];
     }
 
@@ -27,90 +29,84 @@ if ( filesize($data_file) > 2 ) {
 
         // Loop through each category to see if this entry matches
         $match = 0;
-        foreach ($cen_config['categories'] as $key => $category) {
-
+        foreach ($cenConfig['categories'] as $key => $category) {
             $match = 0;
-	    if ( ! empty($category['flags']) && $category['flags'] == $entry['currentLocation'] ) {
-
+            if (!empty($category['flags']) && $category['flags'] === $entry['currentLocation']) {
                 $regex = $category['regex'];
                 $not = $category['not'];
 
                 // Not actually regex, but a range of Dewey numbers
-                if ( is_array($regex) ) {
-		    $dewey = preg_replace('/^(\d{2,3})(.*)/', "$1", $entry['callNumber']);
-                    if ( $dewey >= $regex[0] && $dewey <= $regex[1] ) {
+                if (is_array($regex)) {
+                    $dewey = preg_replace('/^(\d{2,3})(.*)/', '$1', $entry['callNumber']);
+                    if ($dewey >= $regex[0] && $dewey <= $regex[1]) {
                         $match = 1;
                     }
                 } else {
                     // Check the regex before using it so as to produce a useful error message
-                    if ( preg_match("$regex", null) === false ) {
+                    if (!is_valid_regex($regex)) {
                         error_log("\nInvalid regex in \"regex\": " . $regex . "\n");
-                    } elseif ( preg_match("$regex", $entry['callNumber']) ) {
+                    } elseif (preg_match($regex, $entry['callNumber'])) {
                         $match = 1;
                     }
                 }
-                if ( ! empty($not) ) {
+                if (!empty($not)) {
                     // Check the regex before using it so as to produce a useful error message
-                    if ( preg_match("$not", null) === false ) {
+                    if (@preg_match($not, null) === false || preg_last_error() !== PREG_NO_ERROR) {
                         error_log("\nInvalid regex in \"not\": " . $not . "\n");
-                    } elseif ( preg_match("$not", $entry['callNumber']) ) {
+                    } elseif (preg_match($not, $entry['callNumber'])) {
                         $match = 0;
                     }
                 }
-                if ( $match ) {
+                if ($match) {
                     // We match, so push the entry into the $data structure from which we'll report
-                    array_push($data[$key], $entry);
+                    $data[$key][] = $entry;
 
                     // Jump out to the outer loop after we find a match
                     continue 2;
-                } 
+                }
             }
         }
-        if ( ! $match ) {
+        if (!$match) {
             // Nothing matched, so put the entry into the "unmatched" category
-            array_push($data['unmatched'], $entry);
+            $data['unmatched'][] = $entry;
         }
     }
 
     // Compile list counts
-    $list_counts['Total'] = 0;
-    foreach ($cen_config['lists'] as $list) {
-        $list_counts[$list['name']] = 0;
+    $listCounts['Total'] = 0;
+    foreach ($cenConfig['lists'] as $list) {
+        $listCounts[$list['name']] = 0;
         foreach ($list['categories'] as $category) {
-            $list_counts[$list['name']] += count($data[$category]);
-            $list_counts['Total'] += count($data[$category]);
+            $listCounts[$list['name']] += count($data[$category]);
+            $listCounts['Total'] += count($data[$category]);
         }
     }
 
     // Start of table output
-    echo $twig->render('_central_counts.html.twig', ['list_counts' => $list_counts]);
+    echo $twig->render('_central_counts.html.twig', ['list_counts' => $listCounts]);
 
     // Loop through each list
-    foreach ($cen_config['lists'] as $key => $list) {
-
+    foreach ($cenConfig['lists'] as $key => $list) {
         $list['today'] = $today;
-        $list['type'] = $display_type;
+        $list['type'] = $displayType;
 
         // Start of list table
         echo $twig->render('_central_list_start.html.twig', $list);
 
         foreach ($list['categories'] as $category) {
+            $name = $cenConfig['categories'][$category]['name'];
 
-            $name = $cen_config['categories'][$category]['name'];
-
-            if ( ! empty($data[$category]) ) {
-
+            if (!empty($data[$category])) {
                 echo $twig->render('_central_category_start.html.twig', ['name' => $name]);
 
                 foreach ($data[$category] as $entry) {
-
                     /**
                      * For authors or titles to work as search terms, we must convert UTF-8
-                     * characters to ascii and remove Boolean operators punctuation and non-printing 
+                     * characters to ascii and remove Boolean operators punctuation and non-printing
                      * characters.
                      */
-                    $entry['author_search'] = urlencode($ilsws->prepare_search($entry['author']));
-                    $entry['title_search'] = urlencode($ilsws->prepare_search($entry['title']));
+                    $entry['author_search'] = urlencode($ilsws->prepareSearch($entry['author']));
+                    $entry['title_search'] = urlencode($ilsws->prepareSearch($entry['title']));
                     $entry['base_URL'] = $config['base_URL'];
 
                     echo $twig->render('_central_list.html.twig', $entry);
@@ -121,11 +117,7 @@ if ( filesize($data_file) > 2 ) {
         // End of list table
         echo $twig->render('_central_list_end.html.twig', []);
     }
-
 } else {
-
     // Nothing to report
     echo $twig->render('_list_empty.html.twig', ['type' => $type]);
 }
-
-?>
