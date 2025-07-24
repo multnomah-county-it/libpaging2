@@ -11,7 +11,7 @@
 	],
 	"require": {
 		"php": "~7.0|~8.0",
-	    "multnomah-county-it/libilsws": "dev-dev",
+	    "multnomah-county-it/libilsws": "~2.0",
         "symfony/yaml": "~7.0",
         "twig/twig": "~3.0"
 	},
