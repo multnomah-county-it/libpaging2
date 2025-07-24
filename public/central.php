@@ -43,7 +43,7 @@ if (filesize($dataFile) > 2) {
                     }
                 } else {
                     // Check the regex before using it so as to produce a useful error message
-                    if (preg_match($regex, '') === false) { // Passing empty string to avoid warning
+                    if (!is_valid_regex($regex)) {
                         error_log("\nInvalid regex in \"regex\": " . $regex . "\n");
                     } elseif (preg_match($regex, $entry['callNumber'])) {
                         $match = 1;
